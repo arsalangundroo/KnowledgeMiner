@@ -2,7 +2,7 @@ from langchain.agents import initialize_agent, AgentType
 from .prompts.agent_prompts import MAIN_AGENT_PROMPT_PREFIX
 
 
-def create_agent(llm, tools=[]):
+def create_zero_shot_react_langchain_agent(llm, tools=[]):
     # TODO: create this in individual classes and put checks/validations on input parameter
     agent = initialize_agent(
         tools,

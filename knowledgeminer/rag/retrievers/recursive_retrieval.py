@@ -1,8 +1,8 @@
-
 from llama_index.retrievers import RecursiveRetriever
 
-def createRecursiveRetrieverOnIndex(vectorStoreIndex, all_nodes_dict, similarity_top_k):
-    vector_retriever = vectorStoreIndex.as_retriever(similarity_top_k=similarity_top_k)
+
+def createRecursiveRetrieverOnIndex(vector_store_index, all_nodes_dict, similarity_top_k=3):
+    vector_retriever = vector_store_index.as_retriever(similarity_top_k=similarity_top_k)
 
     recursive_retriever = RecursiveRetriever(
         "vector",
