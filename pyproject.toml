@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.10"
 llama-index = "^0.9.34"
 langchain = "^0.1.2"
+llmsherpa = "^0.1.4"
+chromadb = "^0.4.22"
+faiss-cpu = "^1.7.4"
 
 
 [build-system]

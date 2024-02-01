@@ -10,7 +10,7 @@ def create_basic_azure_openai_embedding_client(model_name: str = "text-embedding
         model=model_name,
         # deployment_name="text-davinci-003",
         api_key=os.environ.get("OPENAI_API_KEY", "Please set this value"),
-        azure_endpoint=os.environ.get("OPENAI_API_BASE", "Please set this value"),
+        azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT", "Please set this value"),
         api_version=api_version,
     )
     return embedding_model

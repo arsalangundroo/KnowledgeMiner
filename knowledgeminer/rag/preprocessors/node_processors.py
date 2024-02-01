@@ -1,11 +1,8 @@
 from typing import List
 
-from llama_index import Document
-from llama_index.embeddings import OpenAIEmbedding
 from llama_index.text_splitter import SentenceSplitter
 from llama_index.extractors import TitleExtractor
 from llama_index.ingestion import IngestionPipeline, IngestionCache
-from llama_index.embeddings import OpenAIEmbedding
 from llama_index.schema import BaseNode
 from llama_index.schema import IndexNode
 
@@ -38,7 +35,6 @@ class DocumentsToNodesProcessor(object):
         try:
             sub_node_parsers = [
                 Splitter(chunk_size=c, chunk_overlap=chunk_overlap) for c in sub_chunk_sizes]
-
             all_nodes = []
             for base_node in base_nodes:
                 for n in sub_node_parsers:
