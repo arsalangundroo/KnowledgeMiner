@@ -5,6 +5,9 @@ from llama_index.extractors import TitleExtractor
 from llama_index.ingestion import IngestionPipeline, IngestionCache
 from llama_index.schema import BaseNode
 from llama_index.schema import IndexNode
+from llama_index.node_parser import (
+    SentenceWindowNodeParser,
+)
 
 
 
@@ -18,7 +21,7 @@ class DocumentsToNodesProcessor(object):
             #TODO: to make this generic, read from configs what other transformations need to be applied after chunking
             pipeline = IngestionPipeline(
                 transformations=[
-                    SentenceSplitter(chunk_size=chunk_size, chunk_overlap= chunk_overlap),
+                    SentenceSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap),
                     TitleExtractor(llm),
                     #embed_model
                 ]
@@ -31,10 +34,10 @@ class DocumentsToNodesProcessor(object):
 
     @staticmethod
     def create_index_nodes(base_nodes: List[BaseNode], sub_chunk_sizes:List[int],
-                           chunk_overlap=20, Splitter = SentenceSplitter)->tuple[List[IndexNode],dict[str,IndexNode]]:
+                           sub_chunk_overlaps, Splitter = SentenceSplitter)->tuple[List[IndexNode],dict[str,IndexNode]]:
         try:
             sub_node_parsers = [
-                Splitter(chunk_size=c, chunk_overlap=chunk_overlap) for c in sub_chunk_sizes]
+                Splitter(chunk_size=c, chunk_overlap=chunk_overlap) for c,chunk_overlap in zip(sub_chunk_sizes,sub_chunk_overlaps)]
             all_nodes = []
             for base_node in base_nodes:
                 for n in sub_node_parsers:
@@ -52,6 +55,17 @@ class DocumentsToNodesProcessor(object):
         except Exception as e:
             print(e)
 
+    @staticmethod
+    def create_single_sentence_nodes_with_metadata_window(documents, window_size=3):
+        # create the sentence window node parser w/ default settings
+        node_parser = SentenceWindowNodeParser.from_defaults(
+            window_size=window_size,
+            window_metadata_key="window",
+            original_text_metadata_key="original_text",
+        )
+
+        nodes = node_parser.get_nodes_from_documents(documents)
+        return nodes
 
 
 
