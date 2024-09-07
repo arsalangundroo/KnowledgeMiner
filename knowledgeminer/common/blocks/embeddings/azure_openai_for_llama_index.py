@@ -1,6 +1,6 @@
 import os
-from llama_index.llms import AzureOpenAI
-from llama_index.embeddings import AzureOpenAIEmbedding
+from llama_index.llms.azure_openai import AzureOpenAI
+from llama_index.embeddings.azure_openai import AzureOpenAIEmbedding
 
 
 def create_basic_azure_openai_embedding_client(model_name: str = "text-embedding-ada-002",

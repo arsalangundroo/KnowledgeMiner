@@ -1,11 +1,11 @@
 from typing import List
 
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.extractors import TitleExtractor
-from llama_index.ingestion import IngestionPipeline, IngestionCache
-from llama_index.schema import BaseNode
-from llama_index.schema import IndexNode
-from llama_index.node_parser import (
+from llama_index.core.text_splitter import SentenceSplitter
+from llama_index.core.extractors import TitleExtractor
+from llama_index.core.ingestion import IngestionPipeline, IngestionCache
+from llama_index.core.schema import BaseNode
+from llama_index.core.schema import IndexNode
+from llama_index.core.node_parser import (
     SentenceWindowNodeParser,
 )
 

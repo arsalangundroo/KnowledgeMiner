@@ -3,21 +3,20 @@ from typing import Any
 
 import llama_index.embeddings
 from chromadb import Settings
-from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, load_index_from_storage
-from llama_index.vector_stores import ChromaVectorStore
-from llama_index.storage.storage_context import StorageContext
-from llama_index.embeddings import HuggingFaceEmbedding
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, load_index_from_storage
+from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.core.storage.storage_context import StorageContext
 import chromadb
 
 
 class ChromaDBLamaIndexClient(object):
-    def __init__(self, collection_name: str, embed_model: llama_index.embeddings.BaseEmbedding, llm: Any = "default"):
+    def __init__(self, collection_name: str, embed_model, llm: Any = "default"):
         self._chroma_client = chromadb.PersistentClient("./new_chroma_db_storage/")
         self._chroma_collection = self._chroma_client.create_collection(collection_name)
         self._embed_model = embed_model
         self._vector_store = ChromaVectorStore(chroma_collection=self._chroma_collection)
-        self._storage_context = StorageContext.from_defaults(vector_store=self._vector_store)
-        self._service_context = ServiceContext.from_defaults(embed_model=self._embed_model, llm=llm)
+        # self._storage_context = StorageContext.from_defaults(vector_store=self._vector_store)
+        # self._service_context = ServiceContext.from_defaults(embed_model=self._embed_model, llm=llm)
         self._index = None
 
     # TODO: Define the following constructor using *args params for constructor overloading.
@@ -35,8 +34,9 @@ class ChromaDBLamaIndexClient(object):
         print("Creating Vector Store Index ............")
         # self._index = VectorStoreIndex.from_documents(input_nodes, storage_context=self._storage_context,
         #                                                service_context=self._service_context, show_progress=True)
-        self._index = VectorStoreIndex(input_nodes, storage_context=self._storage_context,
-                                       service_context=self._service_context, show_progress=True)
+        # self._index = VectorStoreIndex(input_nodes, storage_context=self._storage_context,
+        #                                service_context=self._service_context, show_progress=True)
+        self._index = VectorStoreIndex(input_nodes, show_progress=True)
         print("Vector Store Creation Complete!")
 
         return self._index

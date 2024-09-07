@@ -1,8 +1,125 @@
+import os
+from typing import List
+
+from llama_index.core import VectorStoreIndex, Settings
+from llama_index.core.base.base_retriever import BaseRetriever
+from llama_index.core.postprocessor import MetadataReplacementPostProcessor
+
+#from knowledgeminer.agents.tools.vector_store_retrieval_tools import LlamaIndexSourceBookRetrievalTool
+from knowledgeminer.common.blocks.embeddings.azure_openai_for_llama_index import \
+    create_basic_azure_openai_embedding_client
+#from knowledgeminer.common.blocks.llm import azure_openai_for_langchain
+
+#from knowledgeminer.common.utils.service_context_handler import create_basic_service_context
 from knowledgeminer.rag.loaders.load_documents_from_json_fields import load_html_content_from_jsonl_field
+from knowledgeminer.rag.postprocessors.retrieval_response_synthesizer import get_retrieved_context_response_synthesizer
+from knowledgeminer.rag.preprocessors.node_processors import DocumentsToNodesProcessor
+from knowledgeminer.rag.retrievers.recursive_retrieval import createRecursiveRetrieverFromIndex
+from knowledgeminer.rag.vector_stores.chroma_db import ChromaDBLamaIndexClient
+#from knowledgeminer.rag.vector_stores.faiss_vector_store import FaissLamaIndexClient
+from llama_index.core.response_synthesizers import ResponseMode
+from knowledgeminer.common.blocks.llm import azure_openai_for_llama_index, meta_llama3
+from llama_index.llms.azure_openai import AzureOpenAI
+from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
+
+
+def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None ) -> BaseRetriever:
+    sub_chunks_sizes = [128]
+    sub_chunk_overlap = [20]
+    raw_documents = []
+    for source_uri in source_data_uri_list:
+        documents = load_html_content_from_jsonl_field(source_uri)
+        raw_documents.extend(documents)
+
+
+    base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents, llm=llm)
+    all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
+                                                                                sub_chunk_overlap)
+    # faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes)
+    # faiss_client.save_to_persistent_storage("./faiss_storage")
+    chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store_5", embedding_model, llm,
+                                                                           all_nodes)
+    #print(vector_index_on_chunks.service_context)
+    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"dummy_retriever", similarity_top_k=3)
+    return retriever
+
+
+def create_chromadb_vector_store(name, embed_model, llm, nodes):
+    chromadb_client = ChromaDBLamaIndexClient(name, embed_model, llm)
+    return chromadb_client, chromadb_client.create_vector_store_index(nodes)
+
+
+def create_faiss_vector_store(embed_model, llm,nodes):
+    faiss_vs_client = FaissLamaIndexClient(embed_model, llm)
+    return faiss_vs_client, faiss_vs_client.create_vector_store_index(nodes)
+
+
+def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_client=None):
+    for source_uri in source_data_uri_list:
+        documents = load_html_content_from_jsonl_field(source_uri)
+
+    llm = llama_index_llm_client.create_basic_azure_openai_client()
+    embedding_model = create_basic_azure_openai_embedding_client()
+
+    chunked_nodes = DocumentsToNodesProcessor.create_single_sentence_nodes_with_metadata_window(documents[:100], 3)
+
+    # if you wanted to use OpenAIEmbedding, we should also increase the batch size,
+    # since it involves many more calls to the API
+    # ctx = ServiceContext.from_defaults(llm=llm, embed_model=OpenAIEmbedding(embed_batch_size=50)), node_parser=node_parser)
+
+    #service_context = create_basic_service_context()
+    #sentence_index = VectorStoreIndex(chunked_nodes, service_context=service_context)
+    sentence_index = VectorStoreIndex(chunked_nodes)
+
+
+    query_engine = sentence_index.as_query_engine(
+        similarity_top_k=2,
+        # the target key defaults to `window` to match the node_parser's default
+        node_postprocessors=[
+            MetadataReplacementPostProcessor(target_metadata_key="window")
+        ],
+    )
+    #TODO: Add retreiver here to inspect nodes.
+    window_response = query_engine.query(
+        "What is product market fit?"
+    )
+    print(window_response)
+    window = window_response.source_nodes[0].node.metadata["window"]
+    sentence = window_response.source_nodes[0].node.metadata["original_text"]
+
+    print(f"Window: {window}")
+    print("------------------")
+    print(f"Original Sentence: {sentence}")
+
+
 
 
 if __name__ == "__main__":
 
-    html_doc_nodes = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
-    print(len(html_doc_nodes))
-    print(html_doc_nodes[0])
+    # docupedia_docs = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
+    # print(len(docupedia_docs))
+    # print(docupedia_docs[0])
+
+    knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
+
+    # TODO 1: Provide a configured LLM to the response synthesizer
+    Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
+                                                   tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
+    Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
+    retriever = create_retrieval_pipeline(knowledge_source_uri_list)
+    response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT)
+    # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
+    # TODO 2.2: Implement prompt-engineering for all the above methods
+    # TODO 3: Implement storing and loading of persistent index
+    # TODO 4: Implement local embedding and potentially embedding fine-tuning
+    # TODO 5: Implement evaluation for above methods
+
+    while True:
+        query = input("Enter your query:")
+        context_nodes = retriever.retrieve(query)
+
+        response = response_synthesizer.synthesize(query,nodes=context_nodes)
+        # answerer_llm = azure_openai_for_langchain.create_basic_azure_openai_client()
+        # response = answerer_llm.run(query)
+        print(response)
+
