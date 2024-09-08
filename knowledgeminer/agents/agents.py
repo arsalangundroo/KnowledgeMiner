@@ -1,5 +1,5 @@
 from langchain.agents import initialize_agent, AgentType
-from .prompts.agent_prompts import MAIN_AGENT_PROMPT_PREFIX
+from knowledgeminer.prompts import MAIN_AGENT_PROMPT_PREFIX
 
 
 def create_zero_shot_react_langchain_agent(llm, tools=[]):

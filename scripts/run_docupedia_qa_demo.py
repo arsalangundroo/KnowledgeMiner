@@ -21,9 +21,10 @@ from llama_index.core.response_synthesizers import ResponseMode
 from knowledgeminer.common.blocks.llm import azure_openai_for_llama_index, meta_llama3
 from llama_index.llms.azure_openai import AzureOpenAI
 from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
+from knowledgeminer.prompts.qa_prompts import get_qa_prompt_for_response_synthesizer
 
 
-def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None ) -> BaseRetriever:
+def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None) -> BaseRetriever:
     sub_chunks_sizes = [128]
     sub_chunk_overlap = [20]
     raw_documents = []
@@ -61,7 +62,7 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
     llm = llama_index_llm_client.create_basic_azure_openai_client()
     embedding_model = create_basic_azure_openai_embedding_client()
 
-    chunked_nodes = DocumentsToNodesProcessor.create_single_sentence_nodes_with_metadata_window(documents[:100], 3)
+    chunked_nodes = DocumentsToNodesProcessor.create_single_sentence_nodes_with_metadata_window(documents, 3)
 
     # if you wanted to use OpenAIEmbedding, we should also increase the batch size,
     # since it involves many more calls to the API
@@ -106,13 +107,14 @@ if __name__ == "__main__":
     Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
+
     retriever = create_retrieval_pipeline(knowledge_source_uri_list)
-    response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT)
+    response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
     # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
     # TODO 2.2: Implement prompt-engineering for all the above methods
     # TODO 3: Implement storing and loading of persistent index
-    # TODO 4: Implement local embedding and potentially embedding fine-tuning
-    # TODO 5: Implement evaluation for above methods
+    # TODO 4.1 and 4.2: Implement local embedding and potentially embedding fine-tuning
+    # TODO 5: Implement evaluation for above methods.
 
     while True:
         query = input("Enter your query:")
