@@ -1,4 +1,4 @@
-conda create -n "know_miner" python==3.11
+#conda create -n "know_miner" python==3.11
 
 conda activate know_miner
 pip3 install llama-index-vector-stores-chroma

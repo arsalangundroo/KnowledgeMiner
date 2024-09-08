@@ -1,0 +1,1790 @@
+[
+  {
+    "Question":"who can access community metrics of a bosch connect community?",
+    "Answer":"As a community owner you can access your community metrics by clicking on Metrics tab in your community menu. ",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "New Community Metrics with ElasticSearch \\n As a community owner you can access your community metrics by clicking on Metrics tab in your community menu. \\n With the last Bosch Connect update in December 2022 we've changed the Community metrics application to ElasticSearch. It was necessary due to technological requirements. \\n The new metrics application also provides you an interesting set of metrics, but their appearance and names are different now. Please, see the details below. "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Metrics+in+Bosch+Connect"
+    ],
+    "context_pageids":[
+      "2547221088"
+    ]
+  },
+  {
+    "Question":"Can I create a survey in Bosch Connect?",
+    "Answer":"Please be aware that the Survey App will be phased out on the 8th of November.Please consider using Microsoft Form instead.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Surveys in Bosch Connect \\n Please be aware that the Survey App will be phased out on the 8th of November.Please consider using Microsoft Form instead. Further information about how to use MS Forms can be found here. For more information please read our article on the subject here."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Surveys+in+Bosch+Connect"
+    ],
+    "context_pageids":[
+      "2199881376"
+    ]
+  },
+  {
+    "Question":"What is Bosch Overflow?",
+    "Answer":"Bosch Overflow is a question-and-answer forum with a strong emphasis on community collaboration and transparent information sharing. ",
+    "AB Answer":"Bosch Overflow is a system or platform developed by Bosch.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Bosch Overflow \\n Bosch Overflow is a question-and-answer forum with a strong emphasis on community collaboration and transparent information sharing.  We focus on development topics and solutions, and we believe very strongly that reducing silos by increasing cross-functional collaboration will be a strong contributor to our success as we transform into a software-driven company! \\n The four core values are:  \\n access for everyone \\n complimenting existing support \\n rapid onboarding of new technologies \\n building up standard services"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Bosch+Overflow"
+    ],
+    "context_pageids":[
+      "3699939658"
+    ]
+  },
+  {
+    "Question":"Which sources can I search in the Enterprise Search?",
+    "Answer":"    BGN pages including Bosch Zünder Online\n    MyHR\n    Docupedia\n    Bosch Connect \n    SharePoint 2019\n    Bosch Acronym Wiki (in grey result block)\n    Sponsored Links \/ Promoted Results (in grey result block)\n    NormMaster\n    Applications & Services (WorkOn, IT Service Portal, Application list)\n    Central Directives and Guidelines (SOCOS)\n    R&D-Reports (FEBER)",
+    "AB Answer":"You can search in the following sources using the Enterprise Search:\n\n    BGN pages including Bosch Zünder Online\n    MyHR\n    Docupedia\n    Bosch Connect\n    SharePoint 2019\n    Bosch Acronym Wiki (in grey result block)\n    Sponsored Links \/ Promoted Results (in grey result block)\n    NormMaster\n    Applications & Services (WorkOn, IT Service Portal, Application list)\n    Central Directives and Guidelines (SOCOS)\n    R&D-Reports (FEBER)\n    Employee Directory (People & Expertise)\n    Expertise Locator (People & Expertise)\n    Bosch Tube and eLibrary within Media\n    SharePoint Online\n    Learning Portal\n    My Mail\n\nPlease note that NormMaster and the Acronym Wiki are not shown in the menu but are still part of the search.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Search Everything\n\nType in a search term and click on the magnifying glass or hit the return key to start the search.\n\nBy default it will search Everything. This means the following internal sources:\n\n    BGN pages including Bosch Zünder Online\n    MyHR\n    Docupedia\n    Bosch Connect \n    SharePoint 2019\n    Bosch Acronym Wiki (in grey result block)\n    Sponsored Links \/ Promoted Results (in grey result block)\n    NormMaster\n    Applications & Services (WorkOn, IT Service Portal, Application list)\n    Central Directives and Guidelines (SOCOS)\n    R&D-Reports (FEBER)\n\nTo make it easier for you to recognize which of these sources are included in Everything, they have been indented in the list of content sources (the last three items in the list are only available after expanding the list and have therefore not been indented to avoid confusion).\n\nFurther sources will  be searched if this source is explicitly selected:\n\n    Employee Directory (People & Expertise)\n    Expertise Locator (People & Expertise)\n    Bosch Tube and eLibrary within Media\n    SharePoint Online\n    Learning Portal\n    My Mail\n\nWith the menu on the left hand side you can choose one of the listed sources in advance to concentrate your search on one category. You can always return to searching all sources by clicking on Everything.\n\nPlease note that NormMaster and the Acronym Wiki both are not shown in the menu but are an inherent part of the Search!"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=329628126"
+    ],
+    "context_pageids":[
+      "329628126"
+    ]
+  },
+  {
+    "Question":"How can I optimize my BGN page for the Enterprise Search?",
+    "Answer":"There are different ways to optimize BGN pages for your search engine via the \"Edit page\":\n\n    Title\/Heading\n    We recommend to choose a significant title\/headline which also can be found in the text of the page, e.g.: Instead of \"About BD\/PWS3\" a title like \"Application Release Management (BD\/PWS3)\" should be used\n\n\n    Keywords\n    The use of good keywords increases the chance to be found at the top of the hit list.\n        If keywords are entered in the fields 'Keywords' they have to be divided by commas: \"Enterprise Search, Suche Wiki\"\n        Department Keyword Stating your department can also lead to better results if a user is looking for information on your department in particular, e.g.: BD\/WPA-WCS4, BD\/WPA. It is also recommended to include former department names so users can find you after re-organization activities.\n\n\n    Description\n    The page should consist of continuous text and not only of keywords. But keywords and the headline\/title should again be part of the text.",
+    "AB Answer":"To optimize your BGN page for the Enterprise Search, you can follow these steps:\n\n    Title\/Heading: Choose a significant title\/headline that can also be found in the text of the page. For example, instead of \"About BD\/PWS3,\" use a title like \"Application Release Management (BD\/PWS3).\"\n    Keywords: Use good keywords to increase the chance of being found at the top of the hit list. Enter keywords in the \"Keywords\" field, separated by commas. For example, \"Enterprise Search, Suche Wiki.\"\n    Department Keyword: Include your department name to improve search results for users looking for information on your department. It is also recommended to include former department names for users to find you after re-organization activities.\n    Description: The page should consist of continuous text, not just keywords. However, keywords and the headline\/title should be part of the text.\n\nPlease note that these optimization principles also apply to Docupedia and other systems.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How can BGN pages be optimized for the Enterprise Search? How can they be found more easily? There are different ways to optimize BGN pages for your search engine via the \"Edit page\":\n\n    Title\/Heading\n    We recommend to choose a significant title\/headline which also can be found in the text of the page, e.g.: Instead of \"About BD\/PWS3\" a title like \"Application Release Management (BD\/PWS3)\" should be used\n\n\n    Keywords\n    The use of good keywords increases the chance to be found at the top of the hit list.\n        If keywords are entered in the fields 'Keywords' they have to be divided by commas: \"Enterprise Search, Suche Wiki\"\n        Department Keyword Stating your department can also lead to better results if a user is looking for information on your department in particular, e.g.: BD\/WPA-WCS4, BD\/WPA. It is also recommended to include former department names so users can find you after re-organization activities.\n\n\n    Description\n    The page should consist of continuous text and not only of keywords. But keywords and the headline\/title should again be part of the text."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/How+to+optimize+your+BGN+page"
+    ],
+    "context_pageids":[
+      "384633518"
+    ]
+  },
+  {
+    "Question":"whats the email quota?",
+    "Answer":"99GB",
+    "AB Answer":"The email quota is 3 GB for a standard mailbox and a multiple of 3 GB for an extended mailbox.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What is it?\n\tThe Outlook (Cloud Mailbox) means that we migrate the Outlook mailboxes from the Bosch network to the cloud (Microsoft 365). It is a hosted messaging application that provides access to email, calendars, contacts and tasks. You get more storage space for your mailbox and can access it from any Bosch managed device.\nWhat are the benefits?\n\t\n\n    The mailbox size is 99 GB by default"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=1384990577"
+    ],
+    "context_pageids":[
+      "1384990577"
+    ]
+  },
+  {
+    "Question":"How to respond to suspicious e-mails",
+    "Answer":"Was muss ich tun, wenn ich eine Junk Mail in meinem Posteingang erhalte?  \n\nBitte seien Sie immer vorsichtig, wenn Sie e-Mails von unbekannten Absendern erhalten. Sollten Sie sich unsicher sein,\n\n    klicken Sie nicht auf einen Link\n    öffnen Sie keine Anhänge\n    antworten Sie dem Absender nicht\n    laden Sie keine Bilder runter\n\nUm solche E-Mails zu melden, nutzen Sie den Report Spam Button:",
+    "AB Answer":"To respond to suspicious emails, follow these steps:\n\n    Do not click on any links or download any attachments in the email.\n    Do not provide any personal or sensitive information requested in the email.\n    Mark the email as spam or phishing, depending on your email provider.\n    Delete the email from your inbox and trash folder.\n    If you are unsure about the legitimacy of the email, contact the sender directly using a verified contact method to confirm its authenticity.\n    Report the suspicious email to your IT department or email provider for further investigation.\n\nRemember to always exercise caution when dealing with suspicious emails to protect your personal information and prevent potential security breaches.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Was muss ich tun, wenn ich eine Junk Mail in meinem Posteingang erhalte?  \n\nBitte seien Sie immer vorsichtig, wenn Sie e-Mails von unbekannten Absendern erhalten. Sollten Sie sich unsicher sein,\n\n    klicken Sie nicht auf einen Link\n    öffnen Sie keine Anhänge\n    antworten Sie dem Absender nicht\n    laden Sie keine Bilder runter\n\nUm solche E-Mails zu melden, nutzen Sie den Report Spam Button:"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=353685435"
+    ],
+    "context_pageids":[
+      "353685435"
+    ]
+  },
+  {
+    "Question":"Can I decline a video call and answer with audio only?",
+    "Answer":"Yes, you can answer with audio only.",
+    "AB Answer":"Yes, you can decline a video call and answer with audio only. To do this, you need to click on \"Options\" and select \"Answer With Audio Only\".",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Can I decline a video call and answer with audio only?\n\t\n\nYes, you can answer with audio only when you receive a video invitation.\n\nJust click on \"Options\" and select \"Answer With Audio Only\""
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=348504982"
+    ],
+    "context_pageids":[
+      "348504982"
+    ]
+  },
+  {
+    "Question":"How to manage a distribution list?",
+    "Answer":"Via ITSP",
+    "AB Answer":"To manage a distribution list, follow these steps:\n\n    Press the \"Collect responses\" button.\n    Select the highlighted icon and enter the distribution list name or email address.\n    Select the correct distribution list from the list.\n    Press \"Send\" to send the form to the distribution list.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Start the ITSP-Service Portal\nEnter the search term: Security Groups \/ Distribution Lists in the \"Search for Services\" search\nor use this link: ITSP-Distribution-List Page\n\nSelect the text shown in \"bold\"\nUse the possibilities you need\n1: Create or modify a new distribution list\n2: Migrate an existing distribution list to ITSP in order to edit it as a Cloud Mailbox user"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Distribution+list"
+    ],
+    "context_pageids":[
+      "485818523"
+    ]
+  },
+  {
+    "Question":"Who can give access to a sharepoint?",
+    "Answer":"Site owner",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "SharePoint on premises\n\nRelevant for:  SITE OWNER  \n\nTo grant full access to a site, its documents, folders, lists, site menu functions, ribbon functions etc., you can add users to one of the predefined standard groups. Each group has its own permissions and the members of the group will have access to all items and functions with the permissions the group have, as long as the default permissions are not changed by owners. \n\nBy default the following standard groups are predefined in each SharePoint site:\n\n    Visitors (Read only permission)\n    Members (Read\/Write\/Delete permission)\n    Owners (Read\/Write\/Delete permission, Administrate site and site groups)\n    Project Manager (Read\/Write\/Delete + overwrite list behavior (to undo check-out & \"Lock\" for other users))\n    Access Right Owner – ARO; previously called: Master of Role - MoR (Read)\n        as ARO \/ MoR a WOM organization has to be entered\n\nOwn created SharePoint groups don't get access to the full site but can only be permitted on apps (lists & libraries)."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2782144989"
+    ],
+    "context_pageids":[
+      "2782144989"
+    ]
+  },
+  {
+    "Question":"Where do I find an overview of web applications at Bosch?",
+    "Answer":"Next Generation Portal",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Be welcomed to the next generation of Bosch's Portal, NG Portal. The NG Portal will going to be the central entry point for all Bosch associates to their web applications - the place where you can access and provide your apps for the everyday work.\n\nIt is the native successor of today's (inside.) Bosch Portal and Launchpad, which both will have an end of life. Within a transition phase both systems will be available in parallel."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Next+Generation+Portal"
+    ],
+    "context_pageids":[
+      "2371203611"
+    ]
+  },
+  {
+    "Question":"How can I access business data with a mobile device?",
+    "Answer":"Mobile Workplace or mobile Workplace Lite",
+    "AB Answer":"Based on the given search result, you can access business data with a mobile device by using SharePoint. SharePoint provides mobile access on Apple mobile devices with iOS operating systems (iPhones, iPads). You can access SharePoint sites, your OneDrive, your Newsfeed, and Enterprise Search. Documents can be opened in the WebApp as well as in the according Office applications like Word, Excel, or OneNote. To access SharePoint, you can use the \"My Site\" app icon on the device's home screen, directly input a SharePoint site URL in the browser address bar, click on a link to a SharePoint site (for example in an e-mail), or use bookmarks stored in the Safari browser.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "All information related to Mobile Workplace and Mobile Workplace Lite is now gathered on one comprehensive website: https:\/\/mobileworkplace.bosch.tech\n\nVisit this central entry point for all kinds of information about mobile devices, such as recommended mobile devices, step-by-step instructions, and further information about our services.\n\nIf you are interested in having access to some business data on your personal owned mobile device - click here to go directly to the Mobile Workplace Lite section."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Mobile+Workplace+and+Mobile+Workplace+Lite"
+    ],
+    "context_pageids":[
+      "462368390"
+    ]
+  },
+  {
+    "Question":"What IT User type should I use for a new associate?",
+    "Answer":"Basic IT User, Basic IT User 365 or Internal Standard User",
+    "AB Answer":"Based on the given search result, the proposed new name for an IT User type for a new associate is \"Associate Portal Services (BAP)\".",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Which User Type should I request?\nIT User Types with feature descriptions and use cases (incl. Service ID and price)\n\n    Internal IT User - standard cases\n    Internal IT User - other cases\n    External IT User\n    Non Person User\n    IT User Types (still in the planning phase)\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/IT+User+Types"
+    ],
+    "context_pageids":[
+      "2223518294"
+    ]
+  },
+  {
+    "Question":"What is an Internet Based Client?",
+    "Answer":"Currently, the computers are provisioned in Bosch Network (Intranet). In order to adapt the change in way of working and use cases, we designed a new end-device configuration, Internet-based Client (IBC). IBC is a future-proof end device which is provisioned on the Internet. It enables direct and secure connection to internal and external applications which you need daily basis.",
+    "AB Answer":"An Internet-based Client (IBC) is a future-proof end device that is provisioned on the Internet. It enables a direct and secure connection to internal and external applications that are needed on a daily basis. The IBC is designed to adapt to the changing ways of working and use cases, allowing users to work anywhere efficiently. It has key features such as SASE-enabled, client perimeter security concept, self-guided installation process for Windows, and the ability to order new, re-install current computers, or install as a virtual machine. The IBC also implements client lifecycle management via Intune.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\nInternet-based Client\n\nCurrently, the computers are provisioned in Bosch Network (Intranet). In order to adapt the change in way of working and use cases, we designed a new end-device configuration, Internet-based Client (IBC). IBC is a future-proof end device which is provisioned on the Internet. It enables direct and secure connection to internal and external applications which you need daily basis.\n\nKey Features: ​\n\n    SASE-enabled.​\n    Developed with a client perimeter security concept.​\n    Self-guided installation process for Windows available.​\n    You can order new, re-install your current computer or install as VM.\n    You can set-up your IBC anywhere, ​you do not need to be in the office. \n    IBC implements client lifecycle management via Intune.​\n\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=3669484706"
+    ],
+    "context_pageids":[
+      "3669484706"
+    ]
+  },
+  {
+    "Question":"How to order an IBC?",
+    "Answer":"Ordering a New IBC - Order a brand-new computer which is pre-configured as IBC.\nRe-installation as IBC - Re-install your computer with IBC configuration. Please note that this will delete all the data on your computer. So, don't forget to back up. ",
+    "AB Answer":"To order an IBC, there are a few options mentioned in the search result:\n\n    Ordering a New IBC: You can order a brand-new computer that is pre-configured as an IBC.\n    Re-installation as IBC: You can re-install your computer with IBC configuration. Please note that this will delete all the data on your computer, so remember to back up your data.\n    Installation IBC as a VM: You can keep your computer and existing configuration as it is and install IBC as a virtual machine on top of it.\n    IDE Client \/ MIC to IBC: This option is mentioned, but no further details are provided in the search result.\n\nSo, there are multiple ways to order an IBC, depending on your specific needs and preferences.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " 03) How to Get an IBC?\n\n    Erstellt von Sentuerk Kara Sevil (BD\/WPA-PWS BD\/WPA-WZT-Sq5), zuletzt geändert von Jankov Annerose (BD\/WPA-OSS3) am 2023, Dez 07 Aktuelle Version V 17\n    Page Info\n\nBefore you start, please note that we are currently in EAN and you need to register before starting to set-up your IBC. \n\nWe're thrilled that you've chosen to get an Internet-based Client! You're just a few steps away from experiencing the new Office Workplace (Internet-based). We've created a simple and straightforward guide to help you along the way. Thank you for your patience as we assist you in this exciting process.\n\nThere are 4 ways to get an IBC.\n\n    Ordering a New IBC - Order a brand-new computer which is pre-configured as IBC.\n    Re-installation as IBC - Re-install your computer with IBC configuration. Please note that this will delete all the data on your computer. So, don't forget to back up.\n    Installation IBC as a VM - Keep your computer and existing configuration as it is and on top install IBC as a virtual machine.\n    IDE Client \/ MIC to IBC - Please remember that IBC has currently only office profile. \n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2990181693"
+    ],
+    "context_pageids":[
+      "2990181693"
+    ]
+  },
+  {
+    "Question":"Can I access the BCN when I'm on a IBC?",
+    "Answer":"No",
+    "AB Answer":"Based on the given search result, it is mentioned that during the installation and later on for working with your IBC, a network connection with transparent Internet access (not BCN) is required. Therefore, it can be inferred that you cannot access the BCN when you are on an IBC.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Please find an overview of the characteristics of the Intranet-Based and the Internet-Based Clients:\nOperating System\tWindows\tWindows\nConnection to Bosch Corporate Network (BCN):\t\n\t\n\n    direct\n\n\t\n\n(Haken)\n\t(Fehler)\n\n    via VPN\n\n\t\n\n(Haken)\n\t(Fehler)\n\n    indirect via Citrix Virtual Workplace\n\n\t\n\n(Haken)\n\t(Haken)\nConnection to the Internet:\t\n\nRestricted (only via proxy)\n\t\n\nCurrently:\nOutside Bosch location: no proxy\nAt Bosch location: transparent proxy\n\nPlanned:\nOutside and at Bosch location: with SASE (under evaluation)\nApplications:\t\n\n\n\t\n\n    Internet-ready\n\n\t\n\n(Haken)\n\t(Haken)\n\n    Intranet-based\n\n\t\n\n(Haken)\n\tvia Citrix only\nElectronic mailing\t\n\nExchange Server \/ Outlook Desktop App \/ Web App\n\tExchange Online \/ Outlook Desktop App \/ Web App\nEmail encryption\t\n\n(Haken)\n\t(Haken)\nPrinting:\t\n\n\n\t\n\n    Bosch Printer Management\n\n\t\n\n(Haken)\n\t(Haken)\n\n    Bosch Cloud Printing\n\n\t\n\n(Haken)\n\t(Haken)\n\n    self-managed\n\n\t\n\n(Fehler)\n\tneeds to be clarified"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Client+Configurations"
+    ],
+    "context_pageids":[
+      "2650663369"
+    ]
+  },
+  {
+    "Question":"Who answers questions on Bosch Overflow?",
+    "Answer":"Community",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\n\nBosch Overflow is a question-and-answer forum with a strong emphasis on community collaboration and transparent information sharing.  We focus on development topics and solutions, and we believe very strongly that reducing silos by increasing cross-functional collaboration will be a strong contributor to our success as we transform into a software-driven company!\n\nThe four core values are: \n\n    access for everyone\n    complimenting existing support\n    rapid onboarding of new technologies\n    building up standard services\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Bosch+Overflow"
+    ],
+    "context_pageids":[
+      "3699939658"
+    ]
+  },
+  {
+    "Question":"Is SC-3 data allowed on OneDrive?",
+    "Answer":"No",
+    "AB Answer":"No, strictly confidential (SC-3) data is not allowed on OneDrive.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to store C-SC3 data on your assigned laptop while using OneDrive OneDrive Sync Client?\n\nC-SC3 data in not allowed in OneDrive. Only data which is classified below C-SC3 can be stored in OneDrive. To avoid the risk of accidental upload of C-SC3 data in OneDrive while Syncing known folders, please create a folder under C:\\Users\\UserID\\FolderName e.g. C:\\Users\\kxx1mtp\\Secured. \n\nFolders created at this location are secured for logged in user only and is not synced to OneDrive"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/General+information+about+OneDrive"
+    ],
+    "context_pageids":[
+      "1213890166"
+    ]
+  },
+  {
+    "Question":"How can I reach the Bosch IT Support?",
+    "Answer":"3311, ITServiceDesk@bosch.com",
+    "AB Answer":"aiLogo\n\nTo reach the Bosch IT Support, you have several options:\n\n    Email: You can send an email to ITServiceDesk@bosch.com describing the issue you are experiencing.\n    Phone call: You can call the IT Hotline at 3311 or +49 711811-3311 to request support directly.\n    IT Service Portal: You can open a ticket by accessing the IT Service Portal from the Citrix Cloud Workplace\/VWP.\n\nPlease note that during the EAN\/Pilot phases, the ITSP is not accessible from the IBC Client.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " Service and support\n\n\n    Page Info\n\nHere's how you can find help:\n\n\tIT Service Desk (3311): solve incidents, problems, issues - just one call away\n\n\tIT Service Portal: order services on your own and get support\n\n\tIT Personal Service: find the local BD and IT Spaces\n\n\tIT Consulting: use the consulting offer to find the right solution for your specific use case\n\n\tForums: ask your questions - users help users"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Service+and+support"
+    ],
+    "context_pageids":[
+      "2191706729"
+    ]
+  },
+  {
+    "Question":"How can I get access to Miro?",
+    "Answer":"    Access Miro in your Browser via https:\/\/miro.com\/sso\/login\/\n    Type in your NTUser@bosch.com (e.g. abc1fe@bosch.com)\n    Click Continue. 4. To access Miro click on Get started button. 4. To access Miro click on Get started button.",
+    "AB Answer":"To get access to Miro, you can follow these steps:\n\n    Open your browser and go to the website: https:\/\/miro.com\/sso\/login\/\n    Type in your NTUser@bosch.com (e.g. abc1fe@bosch.com)\n    Click on \"Continue\"\n    Click on the \"Get started\" button\n    Answer the questions and click on \"Set up and continue\"\n    That's it! You are now in Miro and can start your work by checking the welcome board.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "    Access Miro in your Browser via https:\/\/miro.com\/sso\/login\/\n    Type in your NTUser@bosch.com (e.g. abc1fe@bosch.com)\n    Click Continue. 4. To access Miro click on Get started button. 4. To access Miro click on Get started button."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Get+access+to+Miro"
+    ],
+    "context_pageids":[
+      "2394675582"
+    ]
+  },
+  {
+    "Question":"Do I need a license for Miro?",
+    "Answer":"The standard charge for Miro usage is about 20€\/ month and will be accounted to a users cost center based on historical Miro activity data.",
+    "AB Answer":"To answer the question, we need to find the relevant information in the search result.\n\nStep 1: Search for the question in the search result.\n\n    The question is \"Do I need a license for Miro?\"\n\nStep 2: Find the relevant information.\n\n    In the search result, there is no specific answer to the question \"Do I need a license for Miro?\".\n\nStep 3: Provide the answer based on the information found.\n\n    I cannot answer this question based on the provided data sources.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What will be charged?\n\nThe standard charge for Miro usage is about 20€\/ month and will be accounted to a users cost center based on historical Miro activity data.\n\n\n\nWho will be charged?\nDefinition\tUsers only using Miro for a single brainstorming or training. User does not re-use Miro after initial activity.\tUsers returning to Miro from time to time (e.g. retrospecitves, PI-Plannings, ...)\tReoccurring users working with Miro frequently\tExternal partners using their external email to access single boards in External Miro Teams\nTypical Usage\tInvited and collaborating in a hosted training once\tReturning to Miro every few month to participate e.g. in Project activities like Lessons Learned\tWorking on several Miro boards to design, brainstorm and develop during their weekly work\tExternal partners collaborating on a specifc brainstorming board once\/ a few times\n\nActive charging?\n\tNo\tdepending on usage frequency (for details see 3.)\tYes\tNo\n\n\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Miro+Charging"
+    ],
+    "context_pageids":[
+      "3958036107"
+    ]
+  },
+  {
+    "Question":"How can I install software on my computer?",
+    "Answer":"Software Center SCCM",
+    "AB Answer":"To install software on your computer, you can follow these steps:\n\n    Go to the IT Service Portal (ITSD) and search for \"Add\/Remove Software\".\n    Click on \"order\" to request the software.\n    Search for \"OBS-Studio\" and install it.\n\nPlease note that these instructions are specific to installing OBS-Studio software. If you are looking to install a different software, the steps may vary.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Package installation\n\n'Software Center' informs you with a balloon, when a package installation is deployed. In the task bar you can see an icon, which shows the information 'New software is available' during a mouse-over:\n\nYou can have a look on pending packages in the IT Workplace Toolkit, either in the 'Software Center' or under 'Messages'.\n\n    Packages with the attribute 'Required' are automatically installed.\n    Packages with the attribute 'Available' are not automatically installed. Please start the installation manually in the 'Software Center' under 'Available Software', by clicking on the 'INSTALL' button.\n    If a package installation requires a restart of your computer, the corresponding dialogue will be displayed. From this point on, you will have a maximum of 10 hours to restart your computer. After 10 hours the computer will be restarted automatically."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/SKB\/How+to+install+software+on+your+SCCM+client"
+    ],
+    "context_pageids":[
+      "657394531"
+    ]
+  },
+  {
+    "Question":"How can I create a survey?",
+    "Answer":"MS Forms",
+    "AB Answer":"To create a survey, you have two options:\n\nOption 1: Create a Survey on your own\n\n    Request your own Inquery designer account by following the procedure in the \"Apply for Accounts\" document.\n    Refer to the \"Surveys_input.pdf\" document for tips on how to create a good survey.\n    Use one of the following responsive templates to create your survey in Inquery:\n        Bosch Supergraphics Responsive Template - 2021\n        Bosch Simple Responsive Template 2021 - without Logo\n        Updated Bosch Responsive Design Template - 2021\n    User guides for Inquery have been uploaded, which you can find HERE.\n    Additional tips on how to create a survey on your own can be found HERE.\n\nOption 2: Request Professional Survey teams to create a Survey for you\n\n    Contact Survey Management Services (SO\/OPM3-IN) for general survey creation or survey consultation services. You do not need to have your own Inquery designer account for this option. More details can be found HERE.\n    Contact CoC Surveys@CI to create surveys for BD product & services or for BD associates.\n\nPlease note that the approval of the respective workers' council may be required for RB Internal Feedback Surveys, and the approval procedure may take up to 6 weeks.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Microsoft Forms is an application for creating Surveys, Quizes, or Polls and visualizing the results. It is the successor of the previous “Survey” feature in Microsoft Office products.\n\nIt supports both Anonymous surveys and Non-anonymous as well as external and internal surveys.\n\nYou can create a new form from scratch or use a template.\n\nIt can be used to:\n\n    Create a Survey, Quiz, or a Poll with various question types.\n        Question Types available:\n            Choice (single or multiple answers)\n            Text\n            Rating\n            Date\n            Ranking\n            Likert\n            File Upload (only allowed for internal surveys)\n            Net Promoter Score"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Microsoft+Forms+General+Information"
+    ],
+    "context_pageids":[
+      "1790649502"
+    ]
+  },
+  {
+    "Question":"For which surveys do I need an approval from the workers council?",
+    "Answer":"Yes",
+    "AB Answer":"Based on the provided search result, you need an approval from the workers' council for all internal RB feedback surveys.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Is it necessary to get Workers' Council approval?\n\nFor all internal RB feedback surveys that include associates working in a country with Worker's Council presence, survey owners must obtain additional Workers’ Council approval. (Even though a general approval from Workers’ Council for using this survey tool in Bosch was already obtained before Go-Live)\n\nPlease note:\n\n    Workers' Council approval required:\n        survey participants from one location\/GB only → local Workers' Council\n        survey participant from more than one location\/GB → KBR approval required\n    The approval procedure may take up to 3 weeks (in case KBR approval is required).\n    To obtain the approval of the respective workers’ council is the responsibility of the unit that conducts the survey!\n    For further information, please look at the KBR page\n    An email template to obtain the approval of the workers’ council can be found here:\n        Email Template\n    For all Employees \/ Associates feedback surveys, additional guidelines must be followed by the survey owners:\n        Principles of Associate Surveys"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=1790650472"
+    ],
+    "context_pageids":[
+      "1790650472"
+    ]
+  },
+  {
+    "Question":"How can I exchange data with teammates?",
+    "Answer":"As part of digital workplace, OpenDXM and Ad hoc Data Exchange are the preferred solutions for exchanging data within Bosch and with external business partners worldwide.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What is Data Exchange?\n\nData exchange is the process of sending and receiving data in such a manner that the information content is not altered during the transmission.\nWhat are the preferred digital workplace solutions to exchange data?\n\nAs part of digital workplace, OpenDXM and Ad hoc Data Exchange are the preferred solutions for exchanging data within Bosch and with external business partners worldwide."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Data+Exchange"
+    ],
+    "context_pageids":[
+      "454641159"
+    ]
+  },
+  {
+    "Question":"How can I exchange data using adhoc?",
+    "Answer":"After you have been granted access to Ad hoc Data Exchange, you can send data to any\nbusiness partner worldwide having an e-mail address, without the need to have user accounts\ncreated on the Bosch side for the external business partners.",
+    "AB Answer":"To exchange data using adhoc, there are two options:\n\n    Via IT Service Portal (ITSP):\n        Go to the Ad hoc Data Exchange Order Form in IT Service Portal.\n        Click on \"Order\" for your own request or \"Order For Others\" for your colleagues' request.\n        After placing the order, confirm with your line manager that the approval of your request has been granted.\n    Via User Self Service in the IdM system:\n        Go to the Launchpad: https:\/\/inside.bosch.com\/irj\/portal\/fiori#Shell-home&\/appFinder\/catalog\n        Search for \"IdM Start Page\" and start IdM.\n        Select the tab \"User Self Service\" and search for \"WAM\".\n        Click on \"WAM\".\n        Select the tab \"Search for Roles\" and search for \"tam-adhoc-allow\".\n        Click on the button to request the role.\n        Click on the \"Shopping cart\" button.\n        Enter a reason for requesting access and click on the \"Submit cart\" button.\n        After placing the request, confirm with your line manager that the approval of your request has been granted.\n\nPlease note that your request to access Ad hoc Data Exchange will not be completed until your line manager approves the request in the IdM system. For any questions or issues, you can contact Ad hoc Data Exchange Support.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Authorized Bosch users can start the application without the need to login (Single-Sign-On).\nThey simply have to enter the recipient's (business partner) email address and optionally the recipient's phone number and a message for the recipient.\nAfter that they can select files and easily send them to any business partner worldwide. \nThe sender (Bosch employee) will be automatically notified of the recipient's password (only if an account needs to be created by the application). \nAd hoc Data Exchange generates automatically accounts (valid for 7 days) for business partners."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=454641628"
+    ],
+    "context_pageids":[
+      "454641628"
+    ]
+  },
+  {
+    "Question":"Can I use Microsoft Store for Business?",
+    "Answer":"No, deactivated 2023",
+    "AB Answer":"Based on the given search result, it is mentioned that the Microsoft Store for Business was deactivated in May 2023. Therefore, you cannot use the Microsoft Store for Business.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "The Microsoft Store for Business was an App Store for distributing software (Apps) on Windows 10\/11 managed devices. It was deactivated in May 2023."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Microsoft+Store+for+Business"
+    ],
+    "context_pageids":[
+      "1352966561"
+    ]
+  },
+  {
+    "Question":"Where should I store project related documents?",
+    "Answer":"Sharepoint Online or Sharepoint on premises",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Focus\n\nCollaborating globally and sharing Office documents and information.\n\nUse Case\n\nSuitable if you are working in distributed and\/or global teams with the need to share documents and information (e.g. via OneNote) with different people. With special features like ILM and external access, specific Use Cases for your daily work are implemented.\n\nLimitations\n\nSharePoint is not made for mass data storage, e.g. laboratory data, measurement data.\n\nAlternatives\n\nIf you have no need for collaboration and also no need for ILM features, use - File Service\/File Share.\n\nIf you have no need for storing strictly confidential data (C-SC3), you can use SharePoint Online.\n\n\nSpecial features\n\nCo-editing: Working with several colleagues on one document at the same time\n\nInformation Lifecycle Management (ILM) with Revisions, Baselines, Approval Workflows etc.\n\nMobile access\n\nCollaboration with external partners possible"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/-+SharePoint+on+premises"
+    ],
+    "context_pageids":[
+      "2986238787"
+    ]
+  },
+  {
+    "Question":"Where can I store personal documents?",
+    "Answer":"    - Local Hard Disc\n    - My Files (Bosch Connect)\n    - OneDrive\n    - Outlook Mailbox (Cloud)\n    - Outlook Mailbox (on premises)\n    - Personal Home Drive (e.g. U drive)",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Personal Storage    - Local Hard Disc\n    - My Files (Bosch Connect)\n    - OneDrive\n    - Outlook Mailbox (Cloud)\n    - Outlook Mailbox (on premises)\n    - Personal Home Drive (e.g. U drive)\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/-+Personal+Storage"
+    ],
+    "context_pageids":[
+      "2816361840"
+    ]
+  },
+  {
+    "Question":"How are software products managed at Bosch?",
+    "Answer":"Software Product Management as a Service - SPMaaS",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " Software Product Management as a Service - SPMaaS\n\n    Angelegt von Schmid Martin (BD\/UXD-MKT-J1), zuletzt geändert am 2024, Feb 20 Aktuelle Version V 5\n    Page Info\n\n\nManaging software products and services is a highly complex area of work requiring specialized skills and knowledge.\n\nQuite often we see someone taking on that task without prior experience or training resulting in several challenges:\n\n\n\nOut of these experiences we offer Software Product Management as a Service - SPMaaS.\nOur scoope of work covers all aspects form initial consulting up to maintenance."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Software+Product+Management+as+a+Service+-+SPMaaS"
+    ],
+    "context_pageids":[
+      "3959214072"
+    ]
+  },
+  {
+    "Question":"What tool to use for approval processes?",
+    "Answer":"WorkOn",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "WorkON - Workflow Platform\n\nWhat is WorkON?\n\nWorkON is the platform for people-driven workflows in many areas of the Bosch Group. Therefore, WorkON is integrated in the inside.Portal with an easy-to-use interface.\n\nThe platform focuses on stand-alone workflows and uses only interfaces to “infrastructure systems” to provide basic functionalities like single-sign-on or email sending. Thus, WorkON handles part of the overall business process e.g. getting approval from one or more employees. In some special cases (e.g. as workflow component of FEBER – R&D reports) WorkON may also initiate a business process after a workflow has been completed.\n\nBenefits of WorkON\n\n    User-friendly Graphical User Interface\n    Better control of approval processes\n    Substitute Management\n    Transparency of request statuses during various stages of the workflow"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Introduction+about+WorkON"
+    ],
+    "context_pageids":[
+      "4001377946"
+    ]
+  },
+  {
+    "Question":"Which browsers can I use at Bosch?",
+    "Answer":"Firefox, MS Edge, Google Chrome",
+    "AB Answer":"Based on the provided search result, you can use Mozilla Firefox ESR, Microsoft Edge (Chromium), and Google Chrome as browsers at Bosch.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Mozilla Firefox ESR and Microsoft Edge are pre-installed on all SCCM managed computers, Google Chrome is available via the IT Service Portal."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Browsers@Bosch"
+    ],
+    "context_pageids":[
+      "2044354807"
+    ]
+  },
+  {
+    "Question":"How to install Firefox?",
+    "Answer":"Fully BD supported Browsers available as SCCM installation.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Browsers@ Bosch\nFully BD supported Browsers available as SCCM installation."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Browsers@Bosch"
+    ],
+    "context_pageids":[
+      "2044354807"
+    ]
+  },
+  {
+    "Question":"Can I have my computer deleivered to my home address?",
+    "Answer":"Yes",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "MyComputer - Device delivery options\nDelivery to your private address\n\nHardware will be delivered to your private address\n\nYou need to provide your correct private address when ordering the hardware in IT Service Portal\n\nYour old hardware can be returned by using the provided empty package and return-label via the logistics partner. For further instructions, see the One-Pager which is also included in the box."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/MyComputer+-+Device+delivery+options"
+    ],
+    "context_pageids":[
+      "2439326901"
+    ]
+  },
+  {
+    "Question":"Which devices classes exist for notebooks?",
+    "Answer":"Standard, Standard Touch, Convertible, Enchanced, Performance",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Device Classes\nStandard Notebook\nStandard Notebook Touch\nConvertible Notebook\nEnhanced Notebook\nPerformance Notebook\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/fleetmgmt\/3+-+Device+Classes"
+    ],
+    "context_pageids":[
+      "331055388"
+    ]
+  },
+  {
+    "Question":"Can I order a Mac?",
+    "Answer":"Yes",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Device Classes\nEnhanced MacBook\nPerformance MacBook\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/fleetmgmt\/3+-+Device+Classes"
+    ],
+    "context_pageids":[
+      "331055388"
+    ]
+  },
+  {
+    "Question":"Which delivery options exist for new computers in Germany?",
+    "Answer":"Business Address, Home, Pickup Location, Desk delivery",
+    "AB Answer":"aiLogo\n\nTo answer this question, we need to look for information about the delivery options for new computers in Germany in the given search result.\n\nLooking at the search result, we can see that there are four delivery options mentioned: Business Address Delivery to your plant location, Home Delivery to your private address, Pickup location Delivery to your local IT (Space) at your location, and Desk delivery (before \"Desk with setup\").\n\nHowever, it is not explicitly mentioned which of these options are available in Germany. Therefore, based on the provided data sources, I cannot answer this question.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " MyComputer - Device delivery options\n\nAll listed delivery options are available in Germany, USA and Canada starting 1st of October, 2022 with external service provider\n\n\n\t\n\nBusiness Address\n\nDelivery to your plant location\n\nHardware will be delivered to your plant location - usually to your goods receipt\n\nDepending on local processes, the next steps may include:\n\n    The device being delivered to you directly via local site logistics\n    The internal local site logistics requests that you pick up the device\n    You may need to contact the local site logistics yourself to schedule pickup of the device\n\nYour old hardware can be returned via the provided empty package and return-label via your local site logistics\n\nIn case of questions, list of frequently asked questions.\n\n\t\n\nHome\n\nDelivery to your private address\n\nHardware will be delivered to your private address\n\nYou need to provide your correct private address when ordering the hardware in IT Service Portal\n\nYour old hardware can be returned by using the provided empty package and return-label via the logistics partner. For further instructions, see the One-Pager which is also included in the box. \n\nIn case of questions, list of frequently asked questions.\n\n\t\n\nPickup location\n\nDelivery to your local IT (Space) at your location\n\nPickup of device flexible at nearest local IT (Space)\n\nYour old hardware can be returned at the local IT (Space) also directly\n\nIn case of questions, list of frequently asked questions.\n\n\n\t\n\nDesk delivery (before \"Desk with setup\")\n\nChange of available delivery\/ return options as of 21 Nov. 2023\n\nDelivery to your Bosch work desk from IT technician (Please note: Additional cost applies for this service)\n\nThe device will be sent to the responsible technician for delivery\n\nOur service provider will contact you to arrange an appointment for delivery and installation at your workplace\n\nHardware will be delivered to your workplace on agreed delivery date\n\nIn case of a replacement, the technician will ideally retrieve your old computer to securely process for reuse or recycling"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/MyComputer+-+Device+delivery+options"
+    ],
+    "context_pageids":[
+      "2439326901"
+    ]
+  },
+  {
+    "Question":"Are there extra costs for Desk deliveroy of a new computer?",
+    "Answer":"Yes",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\n\t\n\nDesk delivery (before \"Desk with setup\")\n\nChange of available delivery\/ return options as of 21 Nov. 2023\n\nDelivery to your Bosch work desk from IT technician (Please note: Additional cost applies for this service)\n\nThe device will be sent to the responsible technician for delivery\n\nOur service provider will contact you to arrange an appointment for delivery and installation at your workplace\n\nHardware will be delivered to your workplace on agreed delivery date\n\nIn case of a replacement, the technician will ideally retrieve your old computer to securely process for reuse or recycling"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/MyComputer+-+Device+delivery+options"
+    ],
+    "context_pageids":[
+      "2439326901"
+    ]
+  },
+  {
+    "Question":"How can I return a Computer?",
+    "Answer":"Your old hardware can be returned via the provided empty package and return-label via your local site logistics\nYour old hardware can be returned by using the provided empty package and return-label via the logistics partner.\nYour old hardware can be returned at the local IT (Space) also directly",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " MyComputer - Device delivery options\n\nAll listed delivery options are available in Germany, USA and Canada starting 1st of October, 2022 with external service provider\n\n\n\t\n\nBusiness Address\n\nDelivery to your plant location\n\nHardware will be delivered to your plant location - usually to your goods receipt\n\nDepending on local processes, the next steps may include:\n\n    The device being delivered to you directly via local site logistics\n    The internal local site logistics requests that you pick up the device\n    You may need to contact the local site logistics yourself to schedule pickup of the device\n\nYour old hardware can be returned via the provided empty package and return-label via your local site logistics\n\nIn case of questions, list of frequently asked questions.\n\n\t\n\nHome\n\nDelivery to your private address\n\nHardware will be delivered to your private address\n\nYou need to provide your correct private address when ordering the hardware in IT Service Portal\n\nYour old hardware can be returned by using the provided empty package and return-label via the logistics partner. For further instructions, see the One-Pager which is also included in the box. \n\nIn case of questions, list of frequently asked questions.\n\n\t\n\nPickup location\n\nDelivery to your local IT (Space) at your location\n\nPickup of device flexible at nearest local IT (Space)\n\nYour old hardware can be returned at the local IT (Space) also directly\n\nIn case of questions, list of frequently asked questions.\n\n\n\t\n\nDesk delivery (before \"Desk with setup\")\n\nChange of available delivery\/ return options as of 21 Nov. 2023\n\nDelivery to your Bosch work desk from IT technician (Please note: Additional cost applies for this service)\n\nThe device will be sent to the responsible technician for delivery\n\nOur service provider will contact you to arrange an appointment for delivery and installation at your workplace\n\nHardware will be delivered to your workplace on agreed delivery date\n\nIn case of a replacement, the technician will ideally retrieve your old computer to securely process for reuse or recycling"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/MyComputer+-+Device+delivery+options"
+    ],
+    "context_pageids":[
+      "2439326901"
+    ]
+  },
+  {
+    "Question":"What is Mobile Workplace Lite?",
+    "Answer":"Mobile Workplace Lite introduces an intermediate tier of business data access for use on personally owned mobile devices. This tier has the possibility to provide limited access to corporate data, as well as providing access to collaboration tools such as Microsoft Teams.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "General Description\n\n        Mobile Workplace Lite introduces an intermediate tier of business data access for use on personally owned mobile devices. This tier has the possibility to provide limited access to corporate data, as well as providing access to collaboration tools such as Microsoft Teams.\n\n        Even if this sounds a little bit like Bring-Your-Own-Device (BYOD) it is definitely not. BYOD would define the full management of a personally owned mobile device, but with Mobile Workplace Lite we are just managing a smaller part of the device → the Apps.\n\n        Mobile Workplace Lite offers a limited service to access corporate data on your personally owned mobile device. Due to these limitations it is still necessary for employees that require to work with a mobile device, to get a business device with full Mobile PIM access."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/cisteering\/Mobile+Workplace+Lite"
+    ],
+    "context_pageids":[
+      "3606355281"
+    ]
+  },
+  {
+    "Question":"How can Mobile Workplace Lite be ordered?",
+    "Answer":"Can be ordered \/ canceled through IT Service portal",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to order \/ change \/ cancel\n\n        Can be ordered \/ canceled through IT Service portal Mobile Workplace Lite\n        No Mass change currently possible"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/cisteering\/Mobile+Workplace+Lite"
+    ],
+    "context_pageids":[
+      "3606355281"
+    ]
+  },
+  {
+    "Question":"Does Mobile Workplace Lite have dependencies?",
+    "Answer":"The service is dependent on security updates on the personal owned mobile device",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Dependencies and limitations\n\n        The service is dependent on security updates on the personal owned mobile device\n        Feature limitations occur as only basic functionalities are offered\n\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/cisteering\/Mobile+Workplace+Lite"
+    ],
+    "context_pageids":[
+      "3606355281"
+    ]
+  },
+  {
+    "Question":"What kind of databases are available?",
+    "Answer":"Oracle Database Services,\nOracle Database Licenses,\nMongoDB DATABASE,\nMicrosoft SQL Databases,\nMicrosoft SQL Licenses\n",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      null
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/cisteering\/Database"
+    ],
+    "context_pageids":[
+      "2352371037"
+    ]
+  },
+  {
+    "Question":"What is Wifi calling?",
+    "Answer":"Wi-Fi Calling is a mobile telephony service over Wi-Fi.",
+    "AB Answer":"Wi-Fi Calling is a mobile telephony service that allows users to make and receive calls over a Wi-Fi network instead of using the mobile operator's radio network. It enables users to make calls even in areas with poor or no mobile coverage, such as locations with thick concrete walls or special glass facades. Wi-Fi Calling offers fast call setup times, HD-Voice quality, and the same call behavior as normal calls with the default smartphone dialer and phone number. It does not require any additional apps like Skype or WhatsApp. Wi-Fi Calling is already included in the user's mobile tariff and can be used for both private and emergency calls.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What is Wi-Fi Calling?   \n\nWi-Fi Calling is a mobile telephony service over Wi-Fi. In this case, the call is placed over the Wi-Fi access points instead of mobile operator's radio network and thereby users will be able to make and receive calls, also at locations where there is no sufficient mobile coverage. If your smartphone is connected to a Wi-Fi network, it establishes a connection to the operators core network. Your smartphone remembers already known Wi-Fi networks. If you are in the vicinity, it connects automatically and you make calls via Wi-Fi depending on the priority given by your operator. Some operator prioritizes Wi-Fi Calling over normal calls and some vice versa."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Wi-Fi+Calling"
+    ],
+    "context_pageids":[
+      "570952607"
+    ]
+  },
+  {
+    "Question":"Can I use Wifi calling?",
+    "Answer":"Usage of Wi-Fi Calling varies due to the terms of local operators, therefore we cannot give a clear answer.",
+    "AB Answer":"https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Wi-Fi+Calling",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Can I use Wi-Fi Calling?\n\nUsage of Wi-Fi Calling varies due to the terms of local operators, therefore we cannot give a clear answer. Please contact your local mobile telephony responsible who can be found here.\nWi-Fi Calling is released in Australia, Germany, UK and USA so far. If you are located one of these countries you can use Wi-Fi Calling by activating it on your phone."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Wi-Fi+Calling"
+    ],
+    "context_pageids":[
+      "570952607"
+    ]
+  },
+  {
+    "Question":"How can I accesss a wifi with my mobile device?",
+    "Answer":"BWSMD, BWSMD stands for Bosch Wireless Services - Mobile Devices. It is a wireless network for Bosch-managed mobile devices.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\t\n\nBWSMD stands for Bosch Wireless Services - Mobile Devices. It is a wireless network for Bosch-managed mobile devices.\n\nBWSMD replaces the legacy system MSW (Mobile Services WLAN) and provides password-free connection to the internet via Wi-Fi.\n\nYour benefits are:\n\n    Fast and transparent internet access with almost no restrictions – use all your apps with full functionalities now.\n    Your device automatically logs in and connects – no additional permissions or passwords needed!\n    On the roadmap: iOS updates and downloading apps will soon be much faster via BWSMD. The rollout starts in 2019 with the following locations."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/BWSMD+-+FAQ"
+    ],
+    "context_pageids":[
+      "1102160895"
+    ]
+  },
+  {
+    "Question":"What are the prerequisites for BWSMD?",
+    "Answer":"You need to have a Bosch-managed device.",
+    "AB Answer":"The prerequisites for BWSMD are having a Bosch-managed device.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What are the prerequisites? You need to have a Bosch-managed device."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/BWSMD+-+FAQ"
+    ],
+    "context_pageids":[
+      "1102160895"
+    ]
+  },
+  {
+    "Question":"Can I access the BCN via BWSMD?",
+    "Answer":"No",
+    "AB Answer":"No, this is not possible.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Are there any restrictions? \t\n\nYou do not have BCN access, only internet access.\n\nThe internet access is very little restricted, only sites containing malware\/hacking\/extremist\/... are blocked."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/BWSMD+-+FAQ"
+    ],
+    "context_pageids":[
+      "1102160895"
+    ]
+  },
+  {
+    "Question":"What are the costs for BWSMD?",
+    "Answer":"Yes, it will be charged with the LASL code 505M03, about 1€ per Bosch Managed Mobile Device User.",
+    "AB Answer":"The costs for BWSMD are charged with the LASL code 505M03, which is about 1€ per Bosch Managed Mobile Device User. This is the same as the previous service MSW. If you are not using MSW anymore, the charging for MSW will automatically stop.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "What are the costs \/ charges for BWSMD? Yes, it will be charged with the LASL code 505M03, about 1€ per Bosch Managed Mobile Device User."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/BWSMD+-+FAQ"
+    ],
+    "context_pageids":[
+      "1102160895"
+    ]
+  },
+  {
+    "Question":"Who has access to the NG Portal?",
+    "Answer":"Every Bosch user gets the general permission for the NG Portal automatically.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to get there? Every Bosch user gets the general permission for the NG Portal automatically."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/How+to+get+there"
+    ],
+    "context_pageids":[
+      "2375295774"
+    ]
+  },
+  {
+    "Question":"How to access the NG Portal?",
+    "Answer":"https:\/\/portal.bosch.com",
+    "AB Answer":"To access the NG Portal, you can use the ITSP Intelligent Search and type \"NG Portal\" followed by your item. Alternatively, you can call the Helpdesk, open a ticket, or chat with a support engineer.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " How to get there\nEvery Bosch user gets the general permission for the NG Portal automatically.\n\nYou get to it via this link: https:\/\/portal.bosch.com"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/How+to+get+there"
+    ],
+    "context_pageids":[
+      "2375295774"
+    ]
+  },
+  {
+    "Question":"How to get support for the NG Portal?",
+    "Answer":"Next Generation Portal is an official Bosch Service. It is supported via Helpdesk\/ITSP\/SMT support process.",
+    "AB Answer":"aiLogo\n\nTo get support for the NG Portal, you can follow these steps:\n\n    Use the ITSP Intelligent Search to find knowledge articles related to the NG Portal by typing \"NG Portal\" and your item.\n    The knowledge and support articles for the NG Portal are available in the NG Portal KMS (Knowledge Management System).\n    Alternatively, you can also get support by calling the Helpdesk, opening a ticket, or chatting with a support engineer.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " Support for NG Portal\nNext Generation Portal is an official Bosch Service. It is supported via Helpdesk\/ITSP\/SMT support process.\n\nFor general issues on the NG Portal platform you can open a ticket - see IT Service Portal (chose \"Support\").\n\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Support+for+NG+Portal"
+    ],
+    "context_pageids":[
+      "2540870903"
+    ]
+  },
+  {
+    "Question":"How to create a bookmark at the NG Portal?",
+    "Answer":"With a click on the + Button on the right corner of the Start Page you have the option to create a public app or a bookmark and also browse the App Finder.",
+    "AB Answer":"aiLogo\n\nTo create a bookmark at the NG Portal, follow these steps:\n\n    Go to the NG Portal Start Page.\n    Look for the \"+ Button\" on the right corner of the page.\n    Click on the \"+ Button\".\n    A pop-up window labeled \"Create Bookmark\" will appear.\n    In the pop-up window, you can enter the details of the bookmark, such as the name and URL.\n    Once you have entered the necessary information, click on the \"Create Bookmark\" button.\n    The bookmark will now appear as a colored star, similar to an app tile, on your Start Page.\n\nPlease note that it is recommended to first browse the App Finder to check if the app you are looking for is already provided before creating a bookmark.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Create Bookmark\nWith a click on the + Button on the right corner of the Start Page you have the option to create a public app or a bookmark and also browse the App Finder.\nWhen the app that you are looking for is not available in the NG Portal you can simply create a missing link as your very own Bookmark."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Create+Bookmark"
+    ],
+    "context_pageids":[
+      "2734307479"
+    ]
+  },
+  {
+    "Question":"When should I use Mircosoft Planner?",
+    "Answer":"If you are wanting to provide some basic task management for your team, then Planner is the right option.",
+    "AB Answer":"According to the search result, you should use Microsoft Planner if you want to provide basic task management for your team.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Below is a quick picture view of Microsoft task management products. If you are wanting to provide some basic task management for your team, then Planner is the right option. If the scope of who you want to provide task management for grows, then Project Online would be the best tool. For individual task management, ToDo offers the best option here."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Planner+General+Information"
+    ],
+    "context_pageids":[
+      "1224601577"
+    ]
+  },
+  {
+    "Question":"How can I book a room at Bosch?",
+    "Answer":"eRoom",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "eRoom General Informations\n\neRoom is the central room-, desk- and catering booking tool at Bosch → https:\/\/rb-eroom.de.bosch.com\/\n\nAll Bosch employees are able to book rooms, desks, ... with eRoom. "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/eRoom"
+    ],
+    "context_pageids":[
+      "506805458"
+    ]
+  },
+  {
+    "Question":"How to get eRoom at my location?",
+    "Answer":"If you are responsible for your location, please create a ticket with the service \"eRoom\" and script \"eRoom_request location_EN\" (For BSH responsibles 4444, servicedesk@bshg.com) with the following information:\n\n    Location with Bosch short name included: e.g. Feuerbach (Fe)\n    Street: e.g. Borsigstrasse 4\n    Site Responsible: The person that will take over the Go Live process",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to get eRoom at your location\n\nIf you are responsible for your location, please create a ticket with the service \"eRoom\" and script \"eRoom_request location_EN\" (For BSH responsibles 4444, servicedesk@bshg.com) with the following information:\n\n    Location with Bosch short name included: e.g. Feuerbach (Fe)\n    Street: e.g. Borsigstrasse 4\n    Site Responsible: The person that will take over the Go Live process\n\neRoom Team will create a dedicated Teams channel for the handling of the whole Go Live process."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/eRoom"
+    ],
+    "context_pageids":[
+      "506805458"
+    ]
+  },
+  {
+    "Question":"How to access eRoom?",
+    "Answer":"eRoom add-in in Outlook or https:\/\/rb-eroom.de.bosch.com\/",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Where can I find eRoom? You will see an eRoom add-in in your Outlook calendar:\n \n\nAlternatively, you can use the eRoom Web Client or you can use Bosch Next. For more information, please click here."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2397260870"
+    ],
+    "context_pageids":[
+      "2397260870"
+    ]
+  },
+  {
+    "Question":"Where can I book catering for a room?",
+    "Answer":"eRoom",
+    "AB Answer":"You can book catering for a room using the eRoom tool.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Catering\tCold Food, Warm Food, Dinner, ...\t\nDesk\tTable, Workstation\tNot available at all locations\nRoom\tConference Room, Meeting Room, Office, Room for major events, SMR - Smart Meeting Room, Special Room, Training\/Team Room\tCatering can be added to most locations when booking rooms.\nService\tCatering without a room, Technic without a room, Service without a room\tThis is not shown in the map view. Use the list view instead. For more information, see this page and \"eRoom Catering\".\nTechnology\tFlipchart, Presentation Equipment, Telephone Conference, Video Conference, ...\t\nVehicle\tCar, Electric Car, E-Bike, Parking space, Parking space GF"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2397260870"
+    ],
+    "context_pageids":[
+      "2397260870"
+    ]
+  },
+  {
+    "Question":"How can I check in a room if the display does not work?",
+    "Answer":"Outlook Bosch Next or the Webclient",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "When you have booked a room with eRoom (at least 15 mins before the meeting starts), you need to check-in into the room before your meeting starts. The check in must be done in the time span +\/- 15 minutes of your meeting. Please note: If you don’t check in within 15 minutes after your meeting starts, your room booking will be cancelled automatically and the room is then bookable once again for all colleagues.\n\n    15 minutes meetings do not have to be checked in and no check-in button is available\n    Meetings created within the check-in window (15 minutes before the meeting starts) also do not have to be checked in\n\nTo check in, use the display outside the room: click on CHECK-IN on the display in front of the room or check-in via Outlook Bosch Next or the Webclient: "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2397260870"
+    ],
+    "context_pageids":[
+      "2397260870"
+    ]
+  },
+  {
+    "Question":"Can I book a room for a serial appointment?",
+    "Answer":"You can book serial appointments in Outlook as usual.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How can I book a serial appointment? You can book serial appointments in Outlook as usual. The methods explained before will help you."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2397260870"
+    ],
+    "context_pageids":[
+      "2397260870"
+    ]
+  },
+  {
+    "Question":"Can I book an room for an other cost center than my own?",
+    "Answer":"Yes, When you make a booking, your cost center is automatically inserted but this can also be changed manually or afterwards via the eRoom Webclient by clicking on booking overview and selecting the respective booking. There you can adjust the cost center manually.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How can I change the cost center? ?\n\t\n\nWhen you make a booking, your cost center is automatically inserted but this can also be changed manually or afterwards via the eRoom Webclient by clicking on booking overview and selecting the respective booking. There you can adjust the cost center manually.\n\nYou can also book rooms for other people if you are registered as their deputy (see FAQ below). In this case, their cost center is used."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=2397260870"
+    ],
+    "context_pageids":[
+      "2397260870"
+    ]
+  },
+  {
+    "Question":"Who can apply for a sponsored link at the enterprise search?",
+    "Answer":"Anyone",
+    "AB Answer":"Based on the given search result, anyone can apply for a sponsored link at the enterprise search.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to apply for sponsored links?\n\nHow to use the service to apply for sponsored links\n\n    Everybody can apply for a Sponsored Link. If you wish to apply for Sponsored Links please get in touch with Operations.inside.EnterpriseSearch@bosch.com\n    The final review and release date will be defined by the Enterprise Search Team"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Sponsored+Links"
+    ],
+    "context_pageids":[
+      "382961673"
+    ]
+  },
+  {
+    "Question":"Can I access Bosch Tube from my IDE Client?",
+    "Answer":"Yes",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Bosch Tube migration to the cloud The migration to the cloud means that the new architecture based on Kaltura will provide a better user experience with every device and from everywhere"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Bosch+Tube+migration+to+the+cloud"
+    ],
+    "context_pageids":[
+      "2915740973"
+    ]
+  },
+  {
+    "Question":"How to get access to Bosch Tube?",
+    "Answer":"Every Bosch user has access.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Roles to access\n\n    There are no special roles required. Every Bosch user can watch and upload videos."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=741084904"
+    ],
+    "context_pageids":[
+      "741084904"
+    ]
+  },
+  {
+    "Question":"What is required to publish content on Bosch Tube?",
+    "Answer":"When publishing content containing personal data, it is necessary to have the consent of all people.\n----This information is valid for all uploads on Bosch Tube (published, unlisted, private)\n(graue Glühbirne) The person whose personal data is used has to read and understand the terms and conditions provided on the platform before the video is created.\n(graue Glühbirne) The signed document(s) need to be stored within your department. You can also ask your local DSO\/DSP, whether there is a central storage place for such documents.",
+    "AB Answer":"To publish content on Bosch Tube, the following requirements must be fulfilled:\n\n    All videos must comply with the terms and conditions of Bosch Tube.\n    The guidelines for the use of social media should be observed.\n    Only content of the security class SC0 may be publicly shared.\n    Self-created content must comply with the Bosch Brand Guide.\n    All means of communication, including videos, must be designed in accordance with the Bosch Brand Guide.\n    The consistent application of the style guides and basic design elements such as logo, font, colors, and icons is required.\n    For general questions regarding the Bosch Corporate Design and the review and approval of design drafts, contact the Design Support or consult your local marketing or communications department for advice.\n\nPlease note that these requirements apply for both internal and external use of Bosch Tube.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Publishing Content - Required Documents\n\n(graue Glühbirne) When publishing content containing personal data, it is necessary to have the consent of all people.\n----This information is valid for all uploads on Bosch Tube (published, unlisted, private)\n(graue Glühbirne) The person whose personal data is used has to read and understand the terms and conditions provided on the platform before the video is created.\n(graue Glühbirne) The signed document(s) need to be stored within your department. You can also ask your local DSO\/DSP, whether there is a central storage place for such documents.\n\n"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=741084904"
+    ],
+    "context_pageids":[
+      "741084904"
+    ]
+  },
+  {
+    "Question":"How to get the new Teams?",
+    "Answer":"On February 14 the automatic migration will start. During this period you will be asked to switch to the new Teams.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to get it?\nOn February 14 the automatic migration will start. During this period you will be asked to switch to the new Teams.\nThe migration takes place in waves (user by user) and will last about a month.  If you see a pop-up like the one in the next column, it means you have been migrated."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/New+Teams+overview#NewTeamsoverview-Troubleshooting-restrictedaccessnotification"
+    ],
+    "context_pageids":[
+      "3917380071"
+    ]
+  },
+  {
+    "Question":"How to create a Teams Room?",
+    "Answer":"A team room needs to be ordered via the IT Service Portal. To do so, click here.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "CREATE\n3. Creation\nHow can I create a team room?\n\n    A team room needs to be ordered via the IT Service Portal. To do so, click here."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=967855292"
+    ],
+    "context_pageids":[
+      "967855292"
+    ]
+  },
+  {
+    "Question":"Why do access rights need to be managed?",
+    "Answer":"CD 02900",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Information Lifecycle Management (ILM) acc. to Information Governance CD 02900 concerns the creation, approval, storage, use, and maintenance of business information, including any access rights, publication\/transfer and updating, repeal, retention\/archiving, and deletion\/destruction."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/ILM"
+    ],
+    "context_pageids":[
+      "3183772708"
+    ]
+  },
+  {
+    "Question":"What is the scope of ILM?",
+    "Answer":"Information Lifecycle Management (ILM) acc. to Information Governance CD 02900 concerns the creation, approval, storage, use, and maintenance of business information, including any access rights, publication\/transfer and updating, repeal, retention\/archiving, and deletion\/destruction.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Information Lifecycle Management (ILM) acc. to Information Governance CD 02900 concerns the creation, approval, storage, use, and maintenance of business information, including any access rights, publication\/transfer and updating, repeal, retention\/archiving, and deletion\/destruction."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/ILM"
+    ],
+    "context_pageids":[
+      "3183772708"
+    ]
+  },
+  {
+    "Question":"What needs to be fulfilled such that a document is controlled?",
+    "Answer":"history is specified in individual steps and can be traced at any time of its document lifecycle.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Control of documents: according to DIN EN ISO 9001 a document is controlled if its history is specified in individual steps and can be traced at any time of its document lifecycle. Document control involves the following tasks\/steps: creation, labelling\/attributing, changing\/versioning, check and approval, distribution, archiving\/retention, deletion."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/ILM"
+    ],
+    "context_pageids":[
+      "3183772708"
+    ]
+  },
+  {
+    "Question":"Is it possible to rename a conceptual version in ILM?",
+    "Answer":"Yes",
+    "AB Answer":"Based on the provided search result, it is possible to rename a conceptual version in ILM.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Please note the following important restrictions:\n\n    It is possible to rename conceptual version, but not corresponding Revision Set."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/ILM"
+    ],
+    "context_pageids":[
+      "3183772708"
+    ]
+  },
+  {
+    "Question":"What is a baseline in ILM?",
+    "Answer":"Baselines are used to collect documents of a common development state or of certain point of time, for example documents of a Quality Gate passed.",
+    "AB Answer":"A baseline in ILM refers to a specific version or snapshot of a document or file that is created before an upgrade. It is a reference point that allows users to revert back to a previous state if needed.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How to work with baselines\n What is the purpose of a Baseline?\n\nBaselines are used to collect documents of a common development state or of certain point of time, for example documents of a Quality Gate passed.\n\nOnly Revisions of documents, links and other Baselines can be added to a Baseline.\n\nA Baseline can be frozen so that its content cannot be modified anymore."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/ILM"
+    ],
+    "context_pageids":[
+      "3183772708"
+    ]
+  },
+  {
+    "Question":"Can I use Microsoft Whiteboard on my Mac?",
+    "Answer":"Yes, via browser or Teams",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "There are dedicated Microsoft Whiteboard apps for Windows 10 and for iOS devices. It can be used within the Microsoft Teams clients and via browser going to https:\/\/whiteboard.microsoft.com\/"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"Can I share SC-3 data on Microsoft Whiteboard?",
+    "Answer":"No",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Do not share C-SC3 data, Personal Information (PI) and Sensitive Personal Information (SPI) in Microsoft Whiteboard."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"Can I share business records on Microsoft Whitebaords?",
+    "Answer":"No",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Microsoft Whiteboard is not meant to keep [business records] of content that you've created or which you were part of. Business records underlie various requirements like versioning, retention and need to satisfy legal requirements."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"Where are Whiteboards stored?",
+    "Answer":"In personal OneDrive",
+    "AB Answer":"Whiteboards are stored in OneDrive.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "All new whiteboards are created in OneDrive and you can find Whiteboard that you own in your OneDrive file section in the folder \"Whiteboards\"."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"Can I use Microsoft Whiteboards in calls?",
+    "Answer":"Whiteboard is only available in scheduled meetings.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Whiteboard is only available within Scheduled Meetings (via Outlook Add-In) and Ad-hoc (channel) meetings.\nWhen you directly calling someone (e.g. from a direct chat) whiteboard is unavailable. The workaround for this is to manually create a Whiteboard and invite your colleague."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"How to get access to Microsoft Whiteborads?",
+    "Answer":"Via Microsoft 365",
+    "AB Answer":"To get access to Microsoft Whiteboards, follow these steps:\n\n    Open the Company Portal (Comp.portal).\n    Search for \"Microsoft Teams\" in the search bar.\n    Click on \"install\" and open the app.\n    Click on \"sign in\".\n    Click on your user abc123@bosch.com.\n\nPlease note that if your user has not been provisioned yet, you will need to wait for the email confirming that your user has been provisioned before you can sign in to Teams on your mobile Bosch-managed device.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\n\n\nPrerequisites\n\n\nYou are already enrolled to Microsoft 365 (e.g. you can access Microsoft Teams, OneDrive and other M365 services). If you don't have access to Microsoft 365, please follow the Microsoft 365 Docupedia for further instructions."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Whiteboard+in+General"
+    ],
+    "context_pageids":[
+      "1325194104"
+    ]
+  },
+  {
+    "Question":"I cannot create a a borad in Miro",
+    "Answer":"You also need a team in which you can then create the boards. -> Get a Team",
+    "AB Answer":"aiLogo\n\nTo answer the question, we need to find information about creating a board in Miro.\n\n    Search for \"Creating boards in Miro\" in the search result.\n    Look for relevant information about creating boards.\n    Based on the search result, it seems that the information about creating boards in Miro is not provided.\n\nTherefore, the answer is: \"I cannot answer this question based on the provided data sources.\"",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "I am not able to create boards You also need a team in which you can then create the boards. -> Get a Team"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Miro+FAQ"
+    ],
+    "context_pageids":[
+      "2394675676"
+    ]
+  },
+  {
+    "Question":"How can I recall a message sent with Outlook?",
+    "Answer":"Steps to recall an email:\n\n    Navigate to the <Sent Items> folder\n    Double-click to open the desired message for the callback\n    Click on <File> on the top left, select menu item <Info>, in the area <Message Send and Recall> select <Recall this message> \n\nIn the dialog box that appears, select either <Delete copies of this message> or <Delete and replace with a new message>, then click OK. ",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "How do I use the new message callback feature?\n\nAs the sender of an e-mail that I want to call back, the Windows Outlook client must be used for the callback.\n\nSteps to recall an email:\n\n    Navigate to the <Sent Items> folder\n    Double-click to open the desired message for the callback\n    Click on <File> on the top left, select menu item <Info>, in the area <Message Send and Recall> select <Recall this message> \n\nIn the dialog box that appears, select either <Delete copies of this message> or <Delete and replace with a new message>, then click OK.\n\npicture with the buttons for navigation and selecting the defined steps. and\n\nA \"callback\" message is generated and sent to all recipients. If the recipient has their mailbox in Exchange Online, the original message will be recalled (hard deleted). Furthermore, the message that triggers the callback will deleted. This process is carried out by the \"Message Recall Agent\" on the Exchange Online Server.\n\nWhen the recipient's client syncs with the Exchange Online mailbox, the message is never available\/visible in the mailbox. "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=355470137#General(OutlookFAQ)-Outlook-M365-Howdoesthenewmessagerecallwork?"
+    ],
+    "context_pageids":[
+      ""
+    ]
+  },
+  {
+    "Question":"How long can I recall a message in Outlook?",
+    "Answer":"No time limit",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Is there a time limit past which I can’t recall a message?\nNo, there is no time limit, just like the classic message recall feature. A future update is being considered to allow admins to customize a time limit for their own organization."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=355470137#General(OutlookFAQ)-Outlook-M365-Howdoesthenewmessagerecallwork?"
+    ],
+    "context_pageids":[
+      ""
+    ]
+  },
+  {
+    "Question":"Can I integrate a private mailbox in Outlook?",
+    "Answer":"No",
+    "AB Answer":"Based on the given search result, it is mentioned that you can use personal or shared mailboxes to exchange information by email, including attachments. Therefore, it can be inferred that you can integrate a private mailbox in Outlook.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "General information:\nNew Outlook for Windows is switched off within BOSCH (as of 01.02.2024)\n\nBackground:\nNew Outlook for Windows enables the integration of private mailboxes on a BOSCH computer\n\nRisk:\n\n    Infected e-mails (malware, spyware, SPAM, phishing, etc.) can arrive on a BOSCH computer. These infected e-mails will cause damage to the computer and spread to the BOSCH network.\n    If private mailboxes are included, they are integrated via IMAP. Microsoft stores this data in the US data centers.\n\nRisk:\n\nThis does not comply with the European GDPR."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=355470137#General(OutlookFAQ)-Outlook-M365-Howdoesthenewmessagerecallwork?"
+    ],
+    "context_pageids":[
+      ""
+    ]
+  },
+  {
+    "Question":"How can I read encrypted mails on my phone?",
+    "Answer":"Outlook app, Truscenter registration ",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "General:\n\nTo enable S\/MIME encryption ( mail encryption ) on Outlook app, it’s necessary to request\/complete the Registration on Trustcenter ( it is not possible to read or send encrypted or digitally signed E-Mails before complete this step). Once your certificate is ready to use, follow next steps:\n\nWhat are the requirements to enable S\/MIME (mail encryption and\/or signing) on Outlook app in a managed device?\nHow to enable E-Mail encryption on my mobile device?\n\nHow can I use Email Encryption with the Outlook App on my device?"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=1375110060"
+    ],
+    "context_pageids":[
+      "1375110060"
+    ]
+  },
+  {
+    "Question":"I have an idea to improve the digital workplace. What shall I do?",
+    "Answer":"Describe your idea by filling out the given template in the digital workplace ideation channel.",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      " Digital Workplace Ideation Channel Process\n\nThis is the right place for you in case you have an idea on how to improve the digital workplace and\/or vote for already existing ideas!\n\n\nTo submit your idea, just follow these steps:\n\n    Describe your idea by filling out the given template in the digital workplace ideation channel."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Digital+Workplace+Ideation+Channel+Process"
+    ],
+    "context_pageids":[
+      "2983386489"
+    ]
+  },
+  {
+    "Question":"How are ideas for the digital workplace evaluated?",
+    "Answer":"Star rating",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "*Explanation to the evaluation criteria: \n\n    We introduced the star rating based on your feedback that you wish for the possibility to down-vote an idea if you find it unhelpful.\n    The introduction of a 12-month time frame helps us to keep track and focus on the most wanted ideas as the IT environment changes quickly based on regular Evergreen updates. "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Digital+Workplace+Ideation+Channel+Process"
+    ],
+    "context_pageids":[
+      "2983386489"
+    ]
+  },
+  {
+    "Question":"Can I use Adhoc for SC-2 data?",
+    "Answer":"Yes",
+    "AB Answer":"Based on the provided search result, it is stated that data with Security Level 2 (SC-2) and below can be processed in Microsoft Forms. Therefore, you can use Adhoc for SC-2 data.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Ad hoc Data Exchange can be used for exchange of data that are Security Class 0, 1 and 2 (C-SC0, C-SC1, C-SC2)."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=454641628"
+    ],
+    "context_pageids":[
+      "454641628"
+    ]
+  },
+  {
+    "Question":"What do I need for using Ad hoc?",
+    "Answer":"Web broswer",
+    "AB Answer":"To use Ad hoc Data Exchange, you need to fulfill the following requirements:\n\n    You must be granted access to Ad hoc Data Exchange. For further details, please follow the instructions provided.\n    You need to use one of the supported internet browsers: Mozilla Firefox version 68 or higher, Chrome version 82 or higher, or Edge version 82 or higher.\n    Ensure that JavaScript is allowed to run in your browser settings.\n    Session cookies must be allowed in your browser settings.\n\nPlease note that there are limitations for uploading and downloading large files, depending on the browser you are using. 32-bit browsers have a limit of 4GB, and Internet Explorer also seems to have a 4GB limitation. For files larger than 4GB, it is recommended to use the 64-bit versions of Edge or Chrome. The maximum single file size allowed is 20GB, and the overall maximum size in a single transfer is 50GB. The maximum number of files in a single transfer is 999, and the maximum number of files per day is 10,000. It is also advised to send smaller file sizes if possible, as larger files take more time to transfer and have a higher chance of encountering issues.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Ad hoc enables person-to-person file transfer using the convenience of a web browser. "
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=454641628"
+    ],
+    "context_pageids":[
+      "454641628"
+    ]
+  },
+  {
+    "Question":"whats the maximum filesize for ad hoc?",
+    "Answer":"20 GB per file",
+    "AB Answer":"The maximum file size for ad hoc data exchange is 20 GB per single file.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Reliable and fast, even for large volumes of datase:\nCurrently, you can exchange 50GB per transfer\/day and 20 GB per single file."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Benefits+of+Ad+hoc+Data+Exchange+for+the+user"
+    ],
+    "context_pageids":[
+      "459573143"
+    ]
+  },
+  {
+    "Question":"Do I need to register for ad hoc?",
+    "Answer":"No",
+    "AB Answer":"No, registration is not required for ad hoc data exchange.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "No registration required for the business partner:\nAll your business partner (recipient) need to be able to receive the data or to send files back to the original sender at Bosch is a browser and an email address!"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Benefits+of+Ad+hoc+Data+Exchange+for+the+user"
+    ],
+    "context_pageids":[
+      "459573143"
+    ]
+  },
+  {
+    "Question":"Is Atlassian Confluence available at Bosch?",
+    "Answer":"Yes, docupedia",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Docupedia is the internal tool for advanced documentation at Bosch. It is a wiki solution and based on Atlassian Confluence."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Docupedia"
+    ],
+    "context_pageids":[
+      "2044355283"
+    ]
+  },
+  {
+    "Question":"Where do I get a Bosch Powerpoint template?",
+    "Answer":"eForms NG",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "eForms NG provides PowerPoint templates of the Bosch Group, which are in line with the Corporate Design. eForms NG also guarantees accuracy of the legal information and reliability of our company data. Furhermore, there are no performance issues on Windows touch devices any more."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/eForms+NG"
+    ],
+    "context_pageids":[
+      "645721915"
+    ]
+  },
+  {
+    "Question":"Can I use macros in Microsoft Office?",
+    "Answer":"No",
+    "AB Answer":"No, macros are not available in Microsoft Office for the Web.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Why it isn't possible to change the macro settings?\n\nThe deactivation of macros is a security feature to prevent the accidental execution of malicious code in documents. For security reasons a permanent activation of macros is not possible.\n\nOffice files, which includes macros, should be stored in the appropriate file format. File extension for\n\n    Excel: *.xlsm\n    Word: *.docm\n    PowerPoint: *.pptm"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=312975905"
+    ],
+    "context_pageids":[
+      "312975905"
+    ]
+  },
+  {
+    "Question":"Which apps are available at the power platform?",
+    "Answer":"Microsoft Power Platform is composed of four key products: Power Apps, Power Automate, Power BI and Power Virtual Agents.",
+    "AB Answer":"The apps available in the Power Platform are Power Apps, Power Automate, Power Virtual Agents, and Power BI.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "Microsoft Power Platform is composed of four key products: Power Apps, Power Automate, Power BI and Power Virtual Agents."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Power+Platform+in+General"
+    ],
+    "context_pageids":[
+      "2899719944"
+    ]
+  },
+  {
+    "Question":"What is zero trust?",
+    "Answer":"Zero Trust is a new security framework which more effectively adapts to the complexity of the modern environment, embraces the diversity in digital workplace, and protects people, devices, apps, and data wherever they’re located.",
+    "AB Answer":"Zero Trust is a new security framework that adapts to the complexity of the modern environment and protects people, devices, apps, and data wherever they are located. The main difference between Zero Trust and traditional security architecture is that Zero Trust focuses on protecting data rather than the network. It achieves this through three important principles: explicit verification, least-privilege access, and assuming breach. Zero Trust aims to minimize the blast radius, segment access, and verify end-to-end encryption to improve defenses against cyber threats. It also enables flexibility and freedom in onboarding new solutions, devices, and partners without compromising security. Zero Trust is seen as a key factor in navigating the digital IT landscape with resilience, sparking innovation, securing connections, and boosting collaboration.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\nIntroducing Zero Trust\n\nZero Trust is a new security framework which more effectively adapts to the complexity of the modern environment, embraces the diversity in digital workplace, and protects people, devices, apps, and data wherever they’re located.\n\nThe biggest difference of Zero Trust to our current security architecture is Zero Trust does not protect network but data. It achieves that with three important principles:\nVerify explicitly, Use least-privilege access, assume breach"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=3669484706"
+    ],
+    "context_pageids":[
+      "3669484706"
+    ]
+  },
+  {
+    "Question":"What are the zero trust principles?",
+    "Answer":"Verify explicitly, Use least-privilege access, assume breach",
+    "AB Answer":"The zero trust principles are as follows:\n\n    Verify explicitly: Always authenticate and authorize based on all available data points, including user identity, location, device health, service or workload, data classification, and anomalies.\n    Use least-privilege access: Limit user access with just-in-time and just-enough-access (JIT\/JEA), risk-based adaptive policies, and data protection to help secure both data and productivity.\n    Assume breach: Minimize blast radius and segment access. Verify end-to-end encryption and use analytics to get visibility, drive threat detection, and improve defenses.\n\nThese principles are part of the Zero Trust security framework, which aims to protect data rather than just the network.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "\nIntroducing Zero Trust\n\nZero Trust is a new security framework which more effectively adapts to the complexity of the modern environment, embraces the diversity in digital workplace, and protects people, devices, apps, and data wherever they’re located.\n\nThe biggest difference of Zero Trust to our current security architecture is Zero Trust does not protect network but data. It achieves that with three important principles:\nVerify explicitly, Use least-privilege access, assume breach"
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=3669484706"
+    ],
+    "context_pageids":[
+      "3669484706"
+    ]
+  },
+  {
+    "Question":"Is SAP available for IBC?",
+    "Answer":"No",
+    "AB Answer":"No Answer",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "urrently Not Available\n\n    Personal network drive (e.g. U: or H:) is not available.\n    File shares \/ department shares are not yet available on the IBC-\n    SAP applications are not yet available on the IBC.\n    PSTN heavy users should not participate in the IBC Pilot \/ EAN.\n    Emergency calls are currently not available on the IBC.\n    IT Service Portal (ITSP) cannot be reached from an IBC.\n    Skype is not available on IBC."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/pages\/viewpage.action?pageId=3669490006"
+    ],
+    "context_pageids":[
+      "3669490006"
+    ]
+  },
+  {
+    "Question":"Can I use the office LAN with an IBC?",
+    "Answer":"No",
+    "AB Answer":"Based on the given search result, it is recommended to use the Wi-Fi connection instead of the LAN connection when in the office with an IBC. It is advised to disconnect the LAN cable before connecting the laptop. Therefore, you cannot use the office LAN with an IBC.",
+    "Comment":null,
+    "Complexity":"standard text",
+    "Source":"manual",
+    "Aggregation_Type":null,
+    "Context_paragraphs":[
+      "IBC at Bosch location\n\t\nWhen in the office, please use the Wi-Fi connection instead of the LAN connection. If you are using a docking station, please disconnect the LAN cable before connecting your laptop.\nThe recommended Wi-Fi connection at Bosch Locations is BWSMD."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/04%29+Guide+to+Working+with+an+IBC"
+    ],
+    "context_pageids":[
+      "3677731438"
+    ]
+  },
+  {
+    "Question":"How to log in to Miro with SSO and how much does it cost?",
+    "Answer":"    Access Miro in your Browser via https:\/\/miro.com\/sso\/login\/\n    Type in your NTUser@bosch.com (e.g. abc1fe@bosch.com)\n    Click Continue. The standard charge for Miro usage is about 20€\/ month",
+    "AB Answer":null,
+    "Comment":null,
+    "Complexity":"complex text",
+    "Source":"manual",
+    "Aggregation_Type":"AND",
+    "Context_paragraphs":[
+      "    Access Miro in your Browser via https:\/\/miro.com\/sso\/login\/\n    Type in your NTUser@bosch.com (e.g. abc1fe@bosch.com)\n    Click Continue.",
+      "The standard charge for Miro usage is about 20€\/ month and will be accounted to a users cost center based on historical Miro activity data."
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Get+access+to+Miro",
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Miro+Charging"
+    ],
+    "context_pageids":[
+      "2394675582",
+      "3958036107"
+    ]
+  },
+  {
+    "Question":"How can I make a public call in Teams or Skype for Business?",
+    "Answer":"There are three different ways to make a call in Skype. Click in the input field to enter a telephone number with your keyboard,   click in the input field to enter a telephone number with your keyboard or  type the number using the SfB dial pad. In Teams, go to the calls tab and go to the dial pad. ",
+    "AB Answer":null,
+    "Comment":null,
+    "Complexity":"complex text",
+    "Source":"manual",
+    "Aggregation_Type":"AND",
+    "Context_paragraphs":[
+      "There are three different ways to make a call.\n\n    Click in the input field to enter a telephone number with your keyboard.\n\n\n    To call a contact, right click on the contact. Then choose one of the following options for the call:\n    \"Work\": to call the contact at a work number\n    \"Mobile\": to call the contact at a mobile number\n    \"New Number...\": to enter a different number to call that person (e.g. private number)\n    \"Skype for Business call\": to call the contact in SfB (Client)\n\n\n\n  3.  Type the number using the SfB dial pad:\n\nIf your SfB account is enabled for Public Telephony, you can use the dial pad to call a phone number with your SfB client. Click the \"dial pad\" in your SfB main screen. The dial pad will appear just below.\n\nEnter the telephone number with your keyboard or by clicking on the right number.\nThen click on \"Call\".",
+      "\"Go to the calls tab in Microsoft Teams\nGo to the dial-pad\""
+    ],
+    "Context_docs":[
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Basic+Call+Handling",
+      "https:\/\/inside-docupedia.bosch.com\/confluence\/display\/NGW\/Teams+Public+Telephony"
+    ],
+    "context_pageids":[
+      "382242719",
+      "1843378950"
+    ]
+  }
+]

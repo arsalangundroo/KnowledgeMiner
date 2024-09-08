@@ -1,6 +1,13 @@
 import os
 from typing import List
 
+
+from pathlib import Path
+import sys
+path_root = Path(__file__).parents[1]
+sys.path.append(str(path_root))
+print(sys.path)
+
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.core.base.base_retriever import BaseRetriever
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
@@ -101,13 +108,17 @@ if __name__ == "__main__":
     # print(len(docupedia_docs))
     # print(docupedia_docs[0])
 
-    knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
+    knowledge_source_uri_list = ['./data/ngw.jsonl']
 
     # TODO 1: Provide a configured LLM to the response synthesizer
     Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     retriever = create_retrieval_pipeline(knowledge_source_uri_list)
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
     # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
@@ -124,4 +135,5 @@ if __name__ == "__main__":
         # answerer_llm = azure_openai_for_langchain.create_basic_azure_openai_client()
         # response = answerer_llm.run(query)
         print(response)
+
 
