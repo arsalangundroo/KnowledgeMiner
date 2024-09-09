@@ -11,24 +11,19 @@ print(sys.path)
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.core.base.base_retriever import BaseRetriever
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
-
-#from knowledgeminer.agents.tools.vector_store_retrieval_tools import LlamaIndexSourceBookRetrievalTool
 from knowledgeminer.common.blocks.embeddings.azure_openai_for_llama_index import \
     create_basic_azure_openai_embedding_client
-#from knowledgeminer.common.blocks.llm import azure_openai_for_langchain
-
-#from knowledgeminer.common.utils.service_context_handler import create_basic_service_context
 from knowledgeminer.rag.loaders.load_documents_from_json_fields import load_html_content_from_jsonl_field
 from knowledgeminer.rag.postprocessors.retrieval_response_synthesizer import get_retrieved_context_response_synthesizer
 from knowledgeminer.rag.preprocessors.node_processors import DocumentsToNodesProcessor
 from knowledgeminer.rag.retrievers.recursive_retrieval import createRecursiveRetrieverFromIndex
 from knowledgeminer.rag.vector_stores.chroma_db import ChromaDBLamaIndexClient
-#from knowledgeminer.rag.vector_stores.faiss_vector_store import FaissLamaIndexClient
 from llama_index.core.response_synthesizers import ResponseMode
 from knowledgeminer.common.blocks.llm import azure_openai_for_llama_index, meta_llama3
 from llama_index.llms.azure_openai import AzureOpenAI
 from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
 from knowledgeminer.prompts.qa_prompts import get_qa_prompt_for_response_synthesizer
+from knowledgeminer.rag.query_engine.create_query_engine import create_query_engine_from_retriever
 
 
 def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None) -> BaseRetriever:
@@ -47,8 +42,9 @@ def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embeddin
     # faiss_client.save_to_persistent_storage("./faiss_storage")
     chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store_5", embedding_model, llm,
                                                                            all_nodes)
+    chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
     #print(vector_index_on_chunks.service_context)
-    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"dummy_retriever", similarity_top_k=3)
+    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"docupedia_retriever", similarity_top_k=3)
     return retriever
 
 
@@ -100,8 +96,6 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
     print(f"Original Sentence: {sentence}")
 
 
-
-
 if __name__ == "__main__":
 
     # docupedia_docs = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
@@ -118,9 +112,10 @@ if __name__ == "__main__":
                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
 
-    retriever = create_retrieval_pipeline(knowledge_source_uri_list)
+    retriever = create_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model)
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
-    
+
+    query_engine = create_query_engine_from_retriever(retriever,response_synthesizer)
     # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
     # TODO 2.2: Implement prompt-engineering for all the above methods
     # TODO 3: Implement storing and loading of persistent index
@@ -130,11 +125,12 @@ if __name__ == "__main__":
 
     while True:
         query = input("Enter your query:")
-        context_nodes = retriever.retrieve(query)
 
-        response = response_synthesizer.synthesize(query,nodes=context_nodes)
-        # answerer_llm = azure_openai_for_langchain.create_basic_azure_openai_client()
-        # response = answerer_llm.run(query)
+        # context_nodes = retriever.retrieve(query)
+        # response = response_synthesizer.synthesize(query,nodes=context_nodes)
+
+        response = query_engine.query(query)
+
         print(response)
 
 
