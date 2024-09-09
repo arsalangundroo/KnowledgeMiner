@@ -1,6 +1,6 @@
 import os
 from typing import List
-
+import json
 
 from pathlib import Path
 import sys
@@ -40,9 +40,11 @@ def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embeddin
                                                                                 sub_chunk_overlap)
     # faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes)
     # faiss_client.save_to_persistent_storage("./faiss_storage")
-    chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store_5", embedding_model, llm,
+    chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
                                                                            all_nodes)
     chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
+    with open("./out/docupedia_all_nodes_id_dict.json",'w') as fp:
+        json.dumps(all_nodes_id_dict,fp)
     #print(vector_index_on_chunks.service_context)
     retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"docupedia_retriever", similarity_top_k=3)
     return retriever
@@ -96,6 +98,15 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
     print(f"Original Sentence: {sentence}")
 
 
+def create_recursive_retriever_from_persistent_index(persist_url,collection_name):
+    chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage(persist_url,collection_name)
+    with open("./out/docupedia_all_nodes_id_dict.json",'r') as fp:
+        all_nodes_id_dict = json.loads(fp)
+    retriever = createRecursiveRetrieverFromIndex(chromadb_client.get_vector_store_index(), all_nodes_id_dict, "docupedia_retriever",
+                                                  similarity_top_k=3)
+    return retriever
+
+
 if __name__ == "__main__":
 
     # docupedia_docs = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
@@ -113,13 +124,15 @@ if __name__ == "__main__":
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
 
     retriever = create_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model)
+    #retriever = create_recursive_retriever_from_persistent_index("./out/docupedia_chromadb_index","dummy_vector_store")
+
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
 
-    query_engine = create_query_engine_from_retriever(retriever,response_synthesizer)
-    # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
+    query_engine = create_query_engine_from_retriever(retriever, response_synthesizer)
+    # Done: 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
     # TODO 2.2: Implement prompt-engineering for all the above methods
     # TODO 3: Implement storing and loading of persistent index
-    # TODO 4.1 and 4.2: Implement local embedding and potentially embedding fine-tuning
+    # Done 4: Implement local embedding
     # TODO 5: Translate non-english into english before chunking
     # TODO 6: Implement evaluation for above methods.
 
