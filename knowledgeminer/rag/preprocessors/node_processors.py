@@ -22,7 +22,7 @@ class DocumentsToNodesProcessor(object):
             pipeline = IngestionPipeline(
                 transformations=[
                     SentenceSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap),
-                    TitleExtractor(llm),
+                    #TitleExtractor(llm),
                     #embed_model
                 ]
             )

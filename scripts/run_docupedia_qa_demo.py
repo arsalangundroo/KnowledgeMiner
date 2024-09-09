@@ -110,22 +110,23 @@ if __name__ == "__main__":
 
     knowledge_source_uri_list = ['./data/ngw.jsonl']
 
+    # Settings.llm = azure_openai_for_llama_index.create_basic_azure_openai_client()
+    # Settings.embed_model = create_basic_azure_openai_embedding_client()
+
     # TODO 1: Provide a configured LLM to the response synthesizer
     Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
-<<<<<<< Updated upstream
 
-=======
-    
->>>>>>> Stashed changes
     retriever = create_retrieval_pipeline(knowledge_source_uri_list)
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
+    
     # TODO 2.1: Implement and compare other alternatives to response_synthesizer: e.g. query_engine or direct LLM call
     # TODO 2.2: Implement prompt-engineering for all the above methods
     # TODO 3: Implement storing and loading of persistent index
     # TODO 4.1 and 4.2: Implement local embedding and potentially embedding fine-tuning
-    # TODO 5: Implement evaluation for above methods.
+    # TODO 5: Translate non-english into english before chunking
+    # TODO 6: Implement evaluation for above methods.
 
     while True:
         query = input("Enter your query:")

@@ -8,5 +8,5 @@ def get_retrieved_context_response_synthesizer(mode=ResponseMode.REFINE, structu
     # if service_context is None:
     #     service_context = create_basic_service_context()
 
-    response_synthesizer = get_response_synthesizer(response_mode=mode,structured_answer_filtering=structured_answer_filtering,qa_prompt=qa_prompt)
+    response_synthesizer = get_response_synthesizer(response_mode=mode,structured_answer_filtering=structured_answer_filtering,simple_template=qa_prompt)
     return response_synthesizer
