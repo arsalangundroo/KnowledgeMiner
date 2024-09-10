@@ -1,6 +1,7 @@
 from llama_index.core import Settings
 from llama_index.core.response_synthesizers import get_response_synthesizer, BaseSynthesizer
 from llama_index.core.response_synthesizers import ResponseMode
+from llama_index.core import VectorStoreIndex, Settings
 
 
 def get_retrieved_context_response_synthesizer(mode=ResponseMode.REFINE, structured_answer_filtering=False,qa_prompt=None,llm=None):

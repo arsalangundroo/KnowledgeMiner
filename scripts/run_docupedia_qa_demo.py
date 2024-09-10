@@ -26,7 +26,7 @@ from knowledgeminer.prompts.qa_prompts import get_qa_prompt_for_response_synthes
 from knowledgeminer.rag.query_engine.create_query_engine import create_query_engine_from_retriever
 
 
-def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None) -> BaseRetriever:
+def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None, load_existing=False) -> BaseRetriever:
     sub_chunks_sizes = [128]
     sub_chunk_overlap = [20]
     raw_documents = []
@@ -38,14 +38,19 @@ def create_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embeddin
     base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents, llm=llm)
     all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
                                                                                 sub_chunk_overlap)
-    # faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes)
-    # faiss_client.save_to_persistent_storage("./faiss_storage")
-    chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
-                                                                           all_nodes)
-    chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
-    with open("./out/docupedia_all_nodes_id_dict.json",'w') as fp:
-        json.dumps(all_nodes_id_dict,fp)
-    #print(vector_index_on_chunks.service_context)
+    
+    if load_existing==False:
+        # faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes)
+        # faiss_client.save_to_persistent_storage("./faiss_storage")
+        chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
+                                                                            all_nodes)
+        chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
+        # with open("./out/docupedia_all_nodes_id_dict.json",'w') as fp:
+        #     json.dump(all_nodes_id_dict,fp)
+    else:
+        chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage('./out/docupedia_chromadb_index', "dummy_vector_store")
+        vector_index_on_chunks = chromadb_client.get_vector_store_index()
+
     retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"docupedia_retriever", similarity_top_k=3)
     return retriever
 
@@ -98,13 +103,13 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
     print(f"Original Sentence: {sentence}")
 
 
-def create_recursive_retriever_from_persistent_index(persist_url,collection_name):
-    chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage(persist_url,collection_name)
-    with open("./out/docupedia_all_nodes_id_dict.json",'r') as fp:
-        all_nodes_id_dict = json.loads(fp)
-    retriever = createRecursiveRetrieverFromIndex(chromadb_client.get_vector_store_index(), all_nodes_id_dict, "docupedia_retriever",
-                                                  similarity_top_k=3)
-    return retriever
+# def create_recursive_retriever_from_persistent_index(persist_url,collection_name):
+#     chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage(persist_url,collection_name)
+#     with open("./out/docupedia_all_nodes_id_dict.json",'r') as fp:
+#         all_nodes_id_dict = json.loads(fp)
+#     retriever = createRecursiveRetrieverFromIndex(chromadb_client.get_vector_store_index(), all_nodes_id_dict, "docupedia_retriever",
+#                                                   similarity_top_k=3)
+#     return retriever
 
 
 if __name__ == "__main__":
@@ -123,8 +128,7 @@ if __name__ == "__main__":
                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
     Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
 
-    retriever = create_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model)
-    #retriever = create_recursive_retriever_from_persistent_index("./out/docupedia_chromadb_index","dummy_vector_store")
+    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=True)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
 

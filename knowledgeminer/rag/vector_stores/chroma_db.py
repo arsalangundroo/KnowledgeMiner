@@ -70,21 +70,9 @@ class ChromaDBLamaIndexClient(object):
             loaded_chroma_db_vector_store_client._chroma_collection = loaded_chroma_db_vector_store_client._chroma_client.get_collection(collection_name)
             loaded_chroma_db_vector_store_client._vector_store = ChromaVectorStore(chroma_collection=loaded_chroma_db_vector_store_client._chroma_collection)
 
-
-
-            # loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(
-            #     loaded_chroma_db_vector_store_client._vector_store,
-            # )
-            # loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(vector_store=loaded_chroma_db_vector_store_client._vector_store, embed_model=Settings.embed_model)
-
-
-
-            storage_context = StorageContext.from_defaults(persist_dir=url)
-
-            # load index
-            loaded_chroma_db_vector_store_client._index = load_index_from_storage(storage_context)
-
-            print(loaded_chroma_db_vector_store_client._chroma_collection.count())
+            loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(
+                loaded_chroma_db_vector_store_client._vector_store,
+            )
             print(f"Successfully loaded index with collection name {collection_name} from {url} !!!")
             return loaded_chroma_db_vector_store_client
 
