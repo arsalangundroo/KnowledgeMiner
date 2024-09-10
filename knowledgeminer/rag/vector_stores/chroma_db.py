@@ -2,33 +2,29 @@ import logging
 from typing import Any
 
 import llama_index.embeddings
-from chromadb import Settings
-from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, load_index_from_storage
+#from chromadb import Settings
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, ServiceContext, load_index_from_storage, Settings
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.core.storage.storage_context import StorageContext
 import chromadb
 
 
 class ChromaDBLamaIndexClient(object):
-    def __init__(self, collection_name: str, embed_model, persist_dir="./new_chroma_db_storage/", llm: Any = "default"):
-        self._chroma_client = chromadb.PersistentClient(persist_dir)
-        self._chroma_collection = self._chroma_client.create_collection(collection_name)
-        #self._embed_model = embed_model
-        self._vector_store = ChromaVectorStore(chroma_collection=self._chroma_collection)
-        # self._storage_context = StorageContext.from_defaults(vector_store=self._vector_store)
-        # self._service_context = ServiceContext.from_defaults(embed_model=self._embed_model, llm=llm)
-        self._index = None
+    def __init__(self, collection_name: str, embed_model, llm: Any = "default",persist_dir="./new_chroma_db_storage/", load_existing=False):
+        if load_existing==False:
+            self._chroma_client = chromadb.PersistentClient(persist_dir)
+            self._chroma_collection = self._chroma_client.create_collection(collection_name)
+            #self._embed_model = embed_model
+            self._vector_store = ChromaVectorStore(chroma_collection=self._chroma_collection)
+            self._index = None
+        else:
+            self._chroma_client = chromadb.PersistentClient(persist_dir)
+            self._chroma_collection = None
+            # self._embed_model = embed_model
+            self._vector_store = None
+            self._index = None
 
-    # TODO: Define the following constructor using *args params for constructor overloading.
 
-    def _create_client_from_persistent_index(self, client, collection, vector_store, loaded_index):
-
-        self._chroma_client = client
-        self._chroma_collection = collection
-        #self._embed_model = service_context.embed_model
-        self._vector_store = vector_store
-        self._index = loaded_index
-        return self
 
     def create_vector_store_index(self, input_nodes):
         print("Creating Vector Store Index ............")
@@ -69,13 +65,27 @@ class ChromaDBLamaIndexClient(object):
             #     loaded_index=loaded_index
             # )
 
-            loaded_chroma_db_vector_store_client = ChromaDBLamaIndexClient(None,None)
+            loaded_chroma_db_vector_store_client = ChromaDBLamaIndexClient(None,None, load_existing=True)
             loaded_chroma_db_vector_store_client._chroma_client= chromadb.PersistentClient(path=url)
-            loaded_chroma_db_vector_store_client._chroma_collection = loaded_chroma_db_vector_store_client._chroma_client.get_or_create_collection(collection_name)
+            loaded_chroma_db_vector_store_client._chroma_collection = loaded_chroma_db_vector_store_client._chroma_client.get_collection(collection_name)
             loaded_chroma_db_vector_store_client._vector_store = ChromaVectorStore(chroma_collection=loaded_chroma_db_vector_store_client._chroma_collection)
-            loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(
-                loaded_chroma_db_vector_store_client._vector_store,
-            )
+
+
+
+            # loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(
+            #     loaded_chroma_db_vector_store_client._vector_store,
+            # )
+            # loaded_chroma_db_vector_store_client._index = VectorStoreIndex.from_vector_store(vector_store=loaded_chroma_db_vector_store_client._vector_store, embed_model=Settings.embed_model)
+
+
+
+            storage_context = StorageContext.from_defaults(persist_dir=url)
+
+            # load index
+            loaded_chroma_db_vector_store_client._index = load_index_from_storage(storage_context)
+
+            print(loaded_chroma_db_vector_store_client._chroma_collection.count())
+            print(f"Successfully loaded index with collection name {collection_name} from {url} !!!")
             return loaded_chroma_db_vector_store_client
 
         except Exception as e:

@@ -1,3 +1,4 @@
+from llama_index.core import Settings
 from llama_index.core.response_synthesizers import get_response_synthesizer, BaseSynthesizer
 from llama_index.core.response_synthesizers import ResponseMode
 
