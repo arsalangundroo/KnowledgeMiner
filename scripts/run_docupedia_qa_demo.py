@@ -4,11 +4,15 @@ import json
 
 from pathlib import Path
 import sys
+
+from llama_index.core.indices import VectorStoreIndex
+from llama_index.core.settings import Settings
+
 path_root = Path(__file__).parents[1]
 sys.path.append(str(path_root))
 print(sys.path)
 
-from llama_index.core import VectorStoreIndex, Settings
+
 from llama_index.core.base.base_retriever import BaseRetriever
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
 from knowledgeminer.common.blocks.embeddings.azure_openai_for_llama_index import \
@@ -24,34 +28,38 @@ from llama_index.llms.azure_openai import AzureOpenAI
 from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
 from knowledgeminer.prompts.qa_prompts import get_qa_prompt_for_response_synthesizer
 from knowledgeminer.rag.query_engine.create_query_engine import create_query_engine_from_retriever
+from knowledgeminer.rag.vector_stores.faiss_vector_store import FaissLamaIndexClient
 
 
-def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None, load_existing=False) -> BaseRetriever:
-    sub_chunks_sizes = [128]
-    sub_chunk_overlap = [20]
-    raw_documents = []
-    for source_uri in source_data_uri_list:
-        documents = load_html_content_from_jsonl_field(source_uri)
-        raw_documents.extend(documents)
+def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None, embedding_dim=384, load_existing=False) -> BaseRetriever:
+    if not load_existing:
+        sub_chunks_sizes = [128]
+        sub_chunk_overlap = [20]
+        raw_documents = []
+        for source_uri in source_data_uri_list:
+            #TODO 7: Take the following function as an input param of this method an expect it to return a list of documents always.
+            documents = load_html_content_from_jsonl_field(source_uri)
+            raw_documents.extend(documents)
 
+        base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents, llm=llm)
+        all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
+                                                                                    sub_chunk_overlap)
 
-    base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents, llm=llm)
-    all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
-                                                                                sub_chunk_overlap)
-    
-    if load_existing==False:
-        # faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes)
-        # faiss_client.save_to_persistent_storage("./faiss_storage")
-        chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
-                                                                            all_nodes)
-        chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
-        # with open("./out/docupedia_all_nodes_id_dict.json",'w') as fp:
-        #     json.dump(all_nodes_id_dict,fp)
+        faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes,embed_dim=EMBED_DIM)
+        faiss_client.save_to_persistent_storage("../out/docupedia_faiss_storage")
+
+        # chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
+        #                                                                     all_nodes)
+        # chromadb_client.save_to_persistent_storage("./out/docupedia_chromadb_index")
+
     else:
-        chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage('./out/docupedia_chromadb_index', "dummy_vector_store")
-        vector_index_on_chunks = chromadb_client.get_vector_store_index()
+        # chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage('./out/docupedia_chromadb_index', "dummy_vector_store")
+        # vector_index_on_chunks = chromadb_client.get_vector_store_index()
 
-    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, all_nodes_id_dict,"docupedia_retriever", similarity_top_k=3)
+        faiss_client = FaissLamaIndexClient.load_from_persistent_storage("../out/docupedia_faiss_storage",embedding_model,EMBED_DIM)
+        vector_index_on_chunks = faiss_client.get_vector_store_index()
+
+    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks,"docupedia_retriever", similarity_top_k=3)
     return retriever
 
 
@@ -60,8 +68,8 @@ def create_chromadb_vector_store(name, embed_model, llm, nodes):
     return chromadb_client, chromadb_client.create_vector_store_index(nodes)
 
 
-def create_faiss_vector_store(embed_model, llm,nodes):
-    faiss_vs_client = FaissLamaIndexClient(embed_model, llm)
+def create_faiss_vector_store(embed_model, llm,nodes, embed_dim=1536):
+    faiss_vs_client = FaissLamaIndexClient(embed_model,embed_dim, llm)
     return faiss_vs_client, faiss_vs_client.create_vector_store_index(nodes)
 
 
@@ -118,15 +126,17 @@ if __name__ == "__main__":
     # print(len(docupedia_docs))
     # print(docupedia_docs[0])
 
-    knowledge_source_uri_list = ['./data/ngw.jsonl']
+    knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
+    #TODO 8: Try to extract EMBED_DIM from model config/properties
+    Settings.llm = azure_openai_for_llama_index.create_basic_azure_openai_client()
+    Settings.embed_model = create_basic_azure_openai_embedding_client()
+    EMBED_DIM = 1536
 
-    # Settings.llm = azure_openai_for_llama_index.create_basic_azure_openai_client()
-    # Settings.embed_model = create_basic_azure_openai_embedding_client()
-
-    # TODO 1: Provide a configured LLM to the response synthesizer
-    Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
-                                                   tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
-    Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
+    # Done 1: Provide a configured LLM to the response synthesizer
+    # Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
+    #                                                tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
+    # Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
+    # EMBED_DIM = 384
 
     retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=True)
 

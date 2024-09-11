@@ -42,10 +42,10 @@ class DocumentsToNodesProcessor(object):
             for base_node in base_nodes:
                 for n in sub_node_parsers:
                     sub_nodes = n.get_nodes_from_documents([base_node])
-                    sub_inodes = [
+                    sub_nodes = [
                         IndexNode.from_text_node(sn, base_node.node_id) for sn in sub_nodes
                     ]
-                    all_nodes.extend(sub_inodes)
+                    all_nodes.extend(sub_nodes)
 
                 # also add original node to node
                 original_node = IndexNode.from_text_node(base_node, base_node.node_id)
