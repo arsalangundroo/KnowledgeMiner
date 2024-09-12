@@ -138,7 +138,7 @@ if __name__ == "__main__":
     # Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
     # EMBED_DIM = 384
 
-    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=True)
+    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=False)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
 
