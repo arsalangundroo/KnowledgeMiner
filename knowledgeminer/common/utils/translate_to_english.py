@@ -14,7 +14,11 @@ class OpenAITranslator(object):
         prompt_template = PromptTemplate(TRANSLATION_PROMPT_TEMPLATE)
         prompt=prompt_template.format(original_language="German", target_language = "English", original_text=original_text)
         response = self._openai_client.complete(prompt=prompt)
-        translated_text = response.text.split("Translated_Text:")[1].strip()
+        print(response)
+        if "Translated_Text:" in response.text:
+            translated_text = response.text.split("Translated_Text:")[1].strip()
+        else:
+            translated_text = response.text
         assert len(translated_text)>0
         return translated_text
 

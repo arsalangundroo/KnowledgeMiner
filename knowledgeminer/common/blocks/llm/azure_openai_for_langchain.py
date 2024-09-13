@@ -3,7 +3,7 @@ import os
 from langchain_community.chat_models import AzureChatOpenAI
 
 
-def create_basic_azure_openai_client(openai_api_version="2023-03-15-preview", deployment_name="gpt35"):
+def create_basic_azure_openai_client(openai_api_version="2024-04-01-preview", deployment_name="gpt-4-1106-preview"):
     return AzureChatOpenAI(
         azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT", "Please set this value"),
         openai_api_key=os.environ.get("OPENAI_API_KEY", "Please set this value"),

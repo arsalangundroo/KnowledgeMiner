@@ -8,3 +8,4 @@ pip3 install llama-index-vector-stores-faiss
 pip3 uninstall openai
 pip3 install googletrans==4.0.0-rc1
 pip3 install openai
+pip3 install ragas

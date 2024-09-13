@@ -24,7 +24,6 @@ from knowledgeminer.rag.retrievers.recursive_retrieval import createRecursiveRet
 from knowledgeminer.rag.vector_stores.chroma_db import ChromaDBLamaIndexClient
 from llama_index.core.response_synthesizers import ResponseMode
 from knowledgeminer.common.blocks.llm import azure_openai_for_llama_index, meta_llama3
-from llama_index.llms.azure_openai import AzureOpenAI
 from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
 from knowledgeminer.prompts.qa_prompts import get_qa_prompt_for_response_synthesizer
 from knowledgeminer.rag.query_engine.create_query_engine import create_query_engine_from_retriever
@@ -138,7 +137,7 @@ if __name__ == "__main__":
     # Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
     # EMBED_DIM = 384
 
-    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=False)
+    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=True)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
 
@@ -157,7 +156,7 @@ if __name__ == "__main__":
         # response = response_synthesizer.synthesize(query,nodes=context_nodes)
 
         response = query_engine.query(query)
-
+        print(response.source_nodes)
         print(response)
 
 
