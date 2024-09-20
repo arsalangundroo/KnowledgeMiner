@@ -5,19 +5,22 @@ import json
 from pathlib import Path
 import sys
 
-from llama_index.core.indices import VectorStoreIndex
-from llama_index.core.settings import Settings
-
 path_root = Path(__file__).parents[1]
 sys.path.append(str(path_root))
 print(sys.path)
+
+from llama_index.core.indices import VectorStoreIndex
+from llama_index.core.settings import Settings
+
+
 
 
 from llama_index.core.base.base_retriever import BaseRetriever
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
 from knowledgeminer.common.blocks.embeddings.azure_openai_for_llama_index import \
     create_basic_azure_openai_embedding_client
-from knowledgeminer.rag.loaders.load_documents_from_json_fields import load_html_content_from_jsonl_field
+from knowledgeminer.rag.loaders.load_documents_from_json_fields import load_html_content_from_jsonl_field, \
+    load_processed_docupedia_docs_from_jsonl_field
 from knowledgeminer.rag.postprocessors.retrieval_response_synthesizer import get_retrieved_context_response_synthesizer
 from knowledgeminer.rag.preprocessors.node_processors import DocumentsToNodesProcessor
 from knowledgeminer.rag.retrievers.recursive_retrieval import createRecursiveRetrieverFromIndex
@@ -30,19 +33,28 @@ from knowledgeminer.rag.query_engine.create_query_engine import create_query_eng
 from knowledgeminer.rag.vector_stores.faiss_vector_store import FaissLamaIndexClient
 
 
-def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None, embedding_dim=384, load_existing=False) -> BaseRetriever:
+def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None, embedding_model=None, embedding_dim=384, sentence_window_chunking=False, load_existing=False) -> BaseRetriever:
     if not load_existing:
-        sub_chunks_sizes = [128]
-        sub_chunk_overlap = [20]
         raw_documents = []
         for source_uri in source_data_uri_list:
-            #TODO 7: Take the following function as an input param of this method an expect it to return a list of documents always.
-            documents = load_html_content_from_jsonl_field(source_uri)
+            # TODO 7: Take the following function as an input param of this method an expect it to return a list of documents always.
+
+            # documents = load_html_content_from_jsonl_field(source_uri)
+            documents = load_processed_docupedia_docs_from_jsonl_field(source_uri)
             raw_documents.extend(documents)
 
-        base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents, llm=llm)
-        all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
-                                                                                    sub_chunk_overlap)
+        base_nodes = DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction(raw_documents,
+                                                                                              chunk_size=512,
+                                                                                              chunk_overlap=32,
+                                                                                              llm=llm)
+        if not sentence_window_chunking:
+            sub_chunks_sizes = [128]
+            sub_chunk_overlap = [20]
+            all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes(base_nodes, sub_chunks_sizes,
+                                                                                        sub_chunk_overlap)
+        else:
+            all_nodes, all_nodes_id_dict = DocumentsToNodesProcessor.create_index_nodes_from_sentence_window_chunking_for_recursive_retrieval(base_nodes,window_size=3)
+
 
         faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes,embed_dim=EMBED_DIM)
         faiss_client.save_to_persistent_storage("../out/docupedia_faiss_storage")
@@ -110,22 +122,14 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
     print(f"Original Sentence: {sentence}")
 
 
-# def create_recursive_retriever_from_persistent_index(persist_url,collection_name):
-#     chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage(persist_url,collection_name)
-#     with open("./out/docupedia_all_nodes_id_dict.json",'r') as fp:
-#         all_nodes_id_dict = json.loads(fp)
-#     retriever = createRecursiveRetrieverFromIndex(chromadb_client.get_vector_store_index(), all_nodes_id_dict, "docupedia_retriever",
-#                                                   similarity_top_k=3)
-#     return retriever
-
-
 if __name__ == "__main__":
 
     # docupedia_docs = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
     # print(len(docupedia_docs))
     # print(docupedia_docs[0])
 
-    knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
+    #knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
+    knowledge_source_uri_list = ["/Users/gar1syv/Documents/git_repos/KnowledgeMiner/out/parsed_docupedia_sources.jsonl"]
     #TODO 8: Try to extract EMBED_DIM from model config/properties
     Settings.llm = azure_openai_for_llama_index.create_basic_azure_openai_client()
     Settings.embed_model = create_basic_azure_openai_embedding_client()
@@ -137,7 +141,7 @@ if __name__ == "__main__":
     # Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
     # EMBED_DIM = 384
 
-    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,load_existing=True)
+    retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,sentence_window_chunking=True,load_existing=False)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT, structured_answer_filtering=False, qa_prompt=get_qa_prompt_for_response_synthesizer())
 

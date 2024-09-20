@@ -3,7 +3,7 @@ import os
 from llama_index.core import Settings
 from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 from ragas.metrics.critique import harmfulness
-from ragas import evaluate
+from ragas import evaluate, RunConfig
 import json
 from datasets import Dataset
 from tqdm import tqdm
@@ -64,8 +64,11 @@ def run_evaluation_with_ground_truth_dataset(eval_dataset_with_gt,eval_dataset_j
         eval_dataset_with_gt,
         metrics=metrics,
         llm=create_basic_azure_openai_client(),
-        embeddings=azure_embeddings
+        embeddings=azure_embeddings,
+        #raise_exceptions=True,
+        run_config=RunConfig(timeout=250)
     )
+
     df = result.to_pandas()
     print(df.head())
 

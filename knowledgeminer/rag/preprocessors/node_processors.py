@@ -68,6 +68,33 @@ class DocumentsToNodesProcessor(object):
         return nodes
 
 
+    # TODO: Replace the below method and first method with a single generic method that can be configured through function arguments
+    @staticmethod
+    def create_index_nodes_from_sentence_window_chunking_for_recursive_retrieval(base_nodes: List[BaseNode],window_size=3) -> tuple[
+        List[IndexNode], dict[str, IndexNode]]:
+        try:
+            node_parser = SentenceWindowNodeParser.from_defaults(
+                window_size=window_size,
+                window_metadata_key="window",
+                original_text_metadata_key="original_text",
+            )
+            all_nodes = []
+            for base_node in base_nodes:
+
+                sub_nodes = node_parser.get_nodes_from_documents([base_node])
+                sub_nodes = [
+                    IndexNode.from_text_node(sn, base_node.node_id) for sn in sub_nodes
+                ]
+                all_nodes.extend(sub_nodes)
+
+                # also add original node to node
+                original_node = IndexNode.from_text_node(base_node, base_node.node_id)
+                all_nodes.append(original_node)
+            all_nodes_dict = {n.node_id: n for n in all_nodes}
+            return all_nodes, all_nodes_dict
+        except Exception as e:
+            print(e)
+
 
 
 
