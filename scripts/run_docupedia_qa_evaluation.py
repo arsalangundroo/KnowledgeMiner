@@ -1,6 +1,12 @@
 import pandas as pd
 from llama_index.core import Settings
 from llama_index.core.response_synthesizers import ResponseMode
+
+from pathlib import Path
+import sys
+path_root = Path(__file__).parents[1]
+sys.path.append(str(path_root))
+
 from knowledgeminer.common.blocks.embeddings.azure_openai_for_llama_index import \
     create_basic_azure_openai_embedding_client
 from knowledgeminer.common.blocks.embeddings.hf_embed_models import create_hf_embed_model
@@ -12,10 +18,11 @@ from knowledgeminer.rag.postprocessors.retrieval_response_synthesizer import get
 from knowledgeminer.rag.query_engine.create_query_engine import create_query_engine_from_retriever
 from knowledgeminer.rag.retrievers.recursive_retrieval import createRecursiveRetrieverFromIndex
 from knowledgeminer.rag.vector_stores.faiss_vector_store import FaissLamaIndexClient
+from knowledgeminer.rag.rankers.llama_index_rerankers import get_colbert_reranker, get_flag_embedding_reranker
 
 def run_on_full_pipeline():
     # knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
-
+    EVAL_DATASET_OUTFILE = "../out/ragas_eval_dataset_gpt_k10_reranked.json"
     Settings.llm = create_basic_azure_openai_client()
     Settings.embed_model = create_basic_azure_openai_embedding_client()
     EMBED_DIM = 1536
@@ -30,23 +37,25 @@ def run_on_full_pipeline():
                                                                      EMBED_DIM)
     vector_index_on_chunks = faiss_client.get_vector_store_index()
 
-    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, "docupedia_retriever", similarity_top_k=5)
+    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, "docupedia_retriever", similarity_top_k=10)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT,
                                                                       structured_answer_filtering=False,
                                                                       qa_prompt=get_qa_prompt_for_response_synthesizer())
 
-    query_engine = create_query_engine_from_retriever(retriever, response_synthesizer)
+    reranker = get_colbert_reranker(top_n=5)
+    query_engine = create_query_engine_from_retriever(retriever, response_synthesizer,reranker=reranker)
 
     ragas_eval_dataset = create_evaluation_dataset_with_ground_truth_for_RAGAS(
-        "/Users/gar1syv/Documents/ask_bosch_data/docupedia.json", query_engine)
+        "/Users/gar1syv/Documents/ask_bosch_data/docupedia.json",
+                            query_engine, out_file=EVAL_DATASET_OUTFILE)
 
     metrics_df = run_evaluation_with_ground_truth_dataset(ragas_eval_dataset)
 
     # metrics_df = run_evaluation_with_ground_truth_dataset(None,eval_dataset_json_file="../out/ragas_eval_dataset.json")
 
     print_relevant_metrics(metrics_df)
-    metrics_df.to_csv("../out/ragas_eval_results_for_gpt_k10.csv")
+    metrics_df.to_csv("../out/ragas_eval_results_for_gpt_k10_reranked.csv")
 
 
 def run_with_existing_inference_results_file(eval_dataset_file):
@@ -82,6 +91,5 @@ def print_relevant_metrics(metrics_df,saved_metrics_csv_file=None):
 
 if __name__ == "__main__":
     #run_on_full_pipeline()
-    run_with_existing_inference_results_file("../out/ragas_eval_dataset.json")
+    run_with_existing_inference_results_file("../out/ragas_eval_dataset_for_llama3_k10_reranked.json")
     #print_relevant_metrics(None,"../out/ragas_eval_results_for_gpt.csv")
-

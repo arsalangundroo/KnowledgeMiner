@@ -22,7 +22,7 @@ def get_context_list_from_retrieved_nodes(source_nodes):
     return contexts
 
 
-def create_evaluation_dataset_with_ground_truth_for_RAGAS(ground_truth_input_file, query_engine_pipeline):
+def create_evaluation_dataset_with_ground_truth_for_RAGAS(ground_truth_input_file, query_engine_pipeline, out_file="../out/ragas_eval_dataset.json"):
     eval_data_samples = {
         'question': [],
         'answer': [],
@@ -41,9 +41,9 @@ def create_evaluation_dataset_with_ground_truth_for_RAGAS(ground_truth_input_fil
         eval_data_samples['contexts'].append(get_context_list_from_retrieved_nodes(response.source_nodes))
         eval_data_samples['ground_truth'].append(sample["Answer"])
 
-    with open("../out/ragas_eval_dataset.json", 'w') as fp:
+    with open(out_file, 'w') as fp:
         json.dump(eval_data_samples, fp)
-
+    print([len(x) for x in eval_data_samples['contexts'][:20]])
     dataset = Dataset.from_dict(eval_data_samples)
     return dataset
 
@@ -53,10 +53,10 @@ def run_evaluation_with_ground_truth_dataset(eval_dataset_with_gt,eval_dataset_j
         #TODO: load and create eval_dataset from its json file
         with open(eval_dataset_json_file, 'r') as fp:
             json_str = fp.read()
-        eval_data_samples=json.loads(json_str)
+        eval_data_samples = json.loads(json_str)
         eval_dataset_with_gt = Dataset.from_dict(eval_data_samples)
         print(f"Total num. of evaluation questions: {len(eval_data_samples['question'])}")
-
+        print(len(eval_data_samples['contexts'][1]))
     print("Computing Evaluation Metrics with RAGAS ::::::::::: ")
     azure_embeddings = create_basic_azure_openai_embedding_client()
 
