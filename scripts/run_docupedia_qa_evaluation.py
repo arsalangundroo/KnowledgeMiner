@@ -4,6 +4,10 @@ from llama_index.core.response_synthesizers import ResponseMode
 
 from pathlib import Path
 import sys
+
+from knowledgeminer.rag.retrievers.bm25_retriever import get_bm25_retriever
+from knowledgeminer.rag.retrievers.fusion_retriever import get_fusion_retriever_with_bm25
+
 path_root = Path(__file__).parents[1]
 sys.path.append(str(path_root))
 
@@ -22,7 +26,7 @@ from knowledgeminer.rag.rankers.llama_index_rerankers import get_colbert_reranke
 
 def run_on_full_pipeline():
     # knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
-    EVAL_DATASET_OUTFILE = "../out/ragas_eval_dataset_gpt_k10_reranked.json"
+    EVAL_DATASET_OUTFILE = "../out/ragas_eval_dataset_gpt_hybrid_ret_k5_colbert_reranked.json"
     Settings.llm = create_basic_azure_openai_client()
     Settings.embed_model = create_basic_azure_openai_embedding_client()
     EMBED_DIM = 1536
@@ -37,13 +41,19 @@ def run_on_full_pipeline():
                                                                      EMBED_DIM)
     vector_index_on_chunks = faiss_client.get_vector_store_index()
 
-    retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, "docupedia_retriever", similarity_top_k=10)
+    vector_retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks, "docupedia_retriever", similarity_top_k=7)
+
+    print(f"Docstore length for bm25: {len(vector_index_on_chunks.docstore.docs)}")
+    bm25_retriever = get_bm25_retriever(vector_index_on_chunks.docstore,similarity_top_k=3)
+
+    retriever = get_fusion_retriever_with_bm25(vector_retriever,bm25_retriever,top_k=10)
 
     response_synthesizer = get_retrieved_context_response_synthesizer(mode=ResponseMode.COMPACT,
                                                                       structured_answer_filtering=False,
                                                                       qa_prompt=get_qa_prompt_for_response_synthesizer())
 
     reranker = get_colbert_reranker(top_n=5)
+
     query_engine = create_query_engine_from_retriever(retriever, response_synthesizer,reranker=reranker)
 
     ragas_eval_dataset = create_evaluation_dataset_with_ground_truth_for_RAGAS(
@@ -90,6 +100,6 @@ def print_relevant_metrics(metrics_df,saved_metrics_csv_file=None):
 
 
 if __name__ == "__main__":
-    #run_on_full_pipeline()
-    run_with_existing_inference_results_file("../out/ragas_eval_dataset_for_llama3_k10_reranked.json")
-    #print_relevant_metrics(None,"../out/ragas_eval_results_for_gpt.csv")
+    run_on_full_pipeline()
+    #run_with_existing_inference_results_file("../out/ragas_eval_results_for_gpt_k5.csv")
+    #print_relevant_metrics(None,"../out/ragas_eval_results_for_gpt_k5.csv")

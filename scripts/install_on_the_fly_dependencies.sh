@@ -10,5 +10,6 @@ pip3 install llama-index-vector-stores-faiss
 pip3 install openai
 pip3 install ragas
 pip3 install llama-index-postprocessor-colbert-rerank
+pip3 install llama-index-retrievers-bm25
 
 
