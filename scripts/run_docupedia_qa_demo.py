@@ -57,7 +57,7 @@ def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None
 
 
         faiss_client, vector_index_on_chunks = create_faiss_vector_store(embedding_model, llm,all_nodes,embed_dim=EMBED_DIM)
-        faiss_client.save_to_persistent_storage("../out/docupedia_faiss_storage")
+        faiss_client.save_to_persistent_storage("../out/docupedia_faiss_storage_multi_ling")
 
         # chromadb_client, vector_index_on_chunks = create_chromadb_vector_store("dummy_vector_store", embedding_model, llm,
         #                                                                     all_nodes)
@@ -67,7 +67,7 @@ def create_recursive_retrieval_pipeline(source_data_uri_list: List[str],llm=None
         # chromadb_client = ChromaDBLamaIndexClient.load_from_persistent_storage('./out/docupedia_chromadb_index', "dummy_vector_store")
         # vector_index_on_chunks = chromadb_client.get_vector_store_index()
 
-        faiss_client = FaissLamaIndexClient.load_from_persistent_storage("../out/docupedia_faiss_storage",embedding_model,EMBED_DIM)
+        faiss_client = FaissLamaIndexClient.load_from_persistent_storage("../out/docupedia_faiss_storage_with_bge_base",embedding_model,EMBED_DIM)
         vector_index_on_chunks = faiss_client.get_vector_store_index()
 
     retriever = createRecursiveRetrieverFromIndex(vector_index_on_chunks,"docupedia_retriever", similarity_top_k=3)
@@ -124,22 +124,31 @@ def test_run_sentence_window_retrieval(source_data_uri_list, llama_index_llm_cli
 
 if __name__ == "__main__":
 
-    # docupedia_docs = load_html_content_from_jsonl_field("/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl")
-    # print(len(docupedia_docs))
-    # print(docupedia_docs[0])
-
     #knowledge_source_uri_list = ['/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl']
-    knowledge_source_uri_list = ["/Users/gar1syv/Documents/git_repos/KnowledgeMiner/out/parsed_docupedia_sources.jsonl"]
+    knowledge_source_uri_list = ["./out/parsed_docupedia_sources.jsonl"]
     #TODO 8: Try to extract EMBED_DIM from model config/properties
-    Settings.llm = azure_openai_for_llama_index.create_basic_azure_openai_client()
-    Settings.embed_model = create_basic_azure_openai_embedding_client()
-    EMBED_DIM = 1536
 
     # Done 1: Provide a configured LLM to the response synthesizer
-    # Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
-    #                                                tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
-    # Settings.embed_model = create_hf_embed_model(model_name="BAAI/bge-small-en-v1.5")
-    # EMBED_DIM = 384
+    EVAL_DATASET_OUTFILE = "../out/ragas_eval_dataset_llama3_k5_small_bge_hyde_reranked_colbert.json"
+    EMBED_MODEL_NAME = "intfloat/multilingual-e5-large-instruct"
+    EMBED_DIM = 1024
+    #EMBED_DIM = 384 # "BAAI/bge-small-en-v1.5"
+    #EMBED_DIM = 768  # "BAAI/bge-base-en-v1.5"
+    #EMBED_DIM = 3584  # "BAAI/bge-multilingual-gemma2"
+
+    #Settings.llm = create_basic_azure_openai_client()
+    #Settings.embed_model = create_basic_azure_openai_embedding_client()
+    #EMBED_DIM = 1536
+
+    #TODO: Use bge-large or bge-base embedding model:
+    Settings.llm = meta_llama3.create_hf_llama_3_1(model_name="meta-llama/Meta-Llama-3-8B-Instruct",
+                                                    tokenizer_name="meta-llama/Meta-Llama-3-8B-Instruct")
+    Settings.embed_model = create_hf_embed_model(model_name=EMBED_MODEL_NAME)
+
+    
+    #print(Settings.embed_model._model.eval())
+    
+    #print(Settings.embed_model._model.eval())
 
     retriever = create_recursive_retrieval_pipeline(knowledge_source_uri_list,Settings.llm,Settings.embed_model,sentence_window_chunking=True,load_existing=False)
 

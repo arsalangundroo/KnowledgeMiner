@@ -6,10 +6,10 @@ from llama_index.core import Document
 
 from knowledgeminer.common.utils.translate_to_english import OpenAITranslator
 from knowledgeminer.rag.preprocessors.html_parsing import parse_html_text_into_nodes
-from googletrans import Translator
+#from googletrans import Translator
 import re
 
-lang_detector = Translator()
+#lang_detector = Translator()
 translator = OpenAITranslator()
 
 
@@ -90,3 +90,31 @@ def load_html_content_from_jsonl_field(jsonl_file_name: str) -> List[Document]:
 #                 translated_text+=translated_text+". "
 #
 #         return translated_text
+
+
+def load_processed_docupedia_docs_from_jsonl_field(jsonl_file_name: str) -> List[Document]:
+    docupedia_page_docs = []
+
+    with open(jsonl_file_name, "r") as fp:
+        json_list = list(fp)
+
+    for idx, json_str in tqdm(enumerate(json_list)):
+        try:
+            json_obj = json.loads(json_str)
+            docupedia_doc = Document(text=json_obj["text"],
+                                metadata={
+                                    "docupedia_page_id": json_obj["docupedia_page_id"],
+                                    "docupedia_url": json_obj["docupedia_url"]
+                                })
+            docupedia_page_docs.append(docupedia_doc)
+
+        except Exception as e:
+            print(e)
+            print(f"Error with page_id: {json_obj['docupedia_page_id']}")
+
+    return docupedia_page_docs
+
+
+if __name__=='__main__':
+
+    load_html_content_from_jsonl_field('/Users/gar1syv/Documents/ask_bosch_data/ngw.jsonl')
