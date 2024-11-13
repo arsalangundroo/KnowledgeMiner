@@ -34,13 +34,13 @@ def create_evaluation_dataset_with_ground_truth_for_RAGAS(ground_truth_input_fil
         input_json_list = json.load(fp)
     print(f"Total num. of evaluation questions: {len(input_json_list)}")
     print("Generating Evaluation Datset for RAGAS .............")
-    for sample in tqdm(input_json_list):
+    for sample in tqdm(input_json_list[:30]):
         response = query_engine_pipeline.query(sample["Question"])
         eval_data_samples['question'].append(sample['Question'])
         eval_data_samples['answer'].append(response.response)
         eval_data_samples['contexts'].append(get_context_list_from_retrieved_nodes(response.source_nodes))
         eval_data_samples['ground_truth'].append(sample["Answer"])
-
+        print(len(response.source_nodes))
     with open(out_file, 'w') as fp:
         json.dump(eval_data_samples, fp)
     print([len(x) for x in eval_data_samples['contexts'][:20]])

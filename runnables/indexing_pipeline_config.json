@@ -1,0 +1,40 @@
+{
+  "DocumentSources" : [
+    "./data/ngw.jsonl"
+    ],
+  "Loaders" : {
+    "jsonl" : "load_documents_from_json_fields.load_processed_docupedia_docs_from_jsonl_field"
+
+  },
+  "Chunking" : {
+    "Level_1": [
+      {
+        "chunking_strategy": "node_processors.DocumentsToNodesProcessor.docs_to_nodes_sent_chunk_with_title_extraction",
+        "chunk_size": 512,
+        "chunk_overlap": 32,
+        "llm": "default"
+      }
+    ],
+   "Level_2": [
+     {
+        "chunking_strategy": "node_processors.DocumentsToNodesProcessor.create_index_nodes_from_sentence_window_chunking_for_recursive_retrieval",
+        "sub_chunks_sizes" : "n/a" ,
+        "sub_chunk_overlap" : "n/a",
+        "window_size" : 3
+     }
+   ]
+  },
+  "Embedding" : {
+    "model" : "",
+    "embed_dim" : ""
+  },
+
+  "Index": {
+    "index_type" : "faiss",
+    "index_name" : "",
+    "load_existing": "False",
+    "faiss_type": "",
+    "chroma_db_collection_name": "",
+    "persistence_url": "../out/"
+  }
+}

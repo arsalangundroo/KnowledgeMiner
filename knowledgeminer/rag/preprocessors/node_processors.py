@@ -80,7 +80,6 @@ class DocumentsToNodesProcessor(object):
             )
             all_nodes = []
             for base_node in base_nodes:
-
                 sub_nodes = node_parser.get_nodes_from_documents([base_node])
                 sub_nodes = [
                     IndexNode.from_text_node(sn, base_node.node_id) for sn in sub_nodes
